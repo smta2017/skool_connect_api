@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'en'], function () {
+// Route::group(['prefix' => 'en'], function () {
     Route::group(['prefix' => 'v1'], function () {
         Route::group(['prefix' => 'auth'], function () {
             Route::post('login', [AuthController::class, 'login']);
@@ -64,9 +64,9 @@ Route::group(['prefix' => 'en'], function () {
         Route::apiResource('/users', UserController::class);
         Route::group(['prefix' => 'users'], function () {
             Route::get('/profile/{id}', [UserController::class, 'tuserProfile']);
-            Route::get('/notifications', [CustomerController::class, 'notifications']);
-            Route::get('/unread-notifications', [CustomerController::class, 'unReadNotifications']);
-            Route::get('/notifications/{id}/mark-read', [CustomerController::class, 'markAsRead']);
+            // Route::get('/notifications', [CustomerController::class, 'notifications']);
+            // Route::get('/unread-notifications', [CustomerController::class, 'unReadNotifications']);
+            // Route::get('/notifications/{id}/mark-read', [CustomerController::class, 'markAsRead']);
         });
 
 
@@ -74,9 +74,7 @@ Route::group(['prefix' => 'en'], function () {
 
         
         Route::apiResource('/areas', AreaController::class);
+        Route::resource('userTypes', App\Http\Controllers\API\UserTypeAPIController::class);
 
     });
-});
-
-
-Route::resource('tests', App\Http\Controllers\API\testAPIController::class);
+// });
