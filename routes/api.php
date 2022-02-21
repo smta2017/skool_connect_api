@@ -77,3 +77,6 @@ Route::group(['prefix' => 'en'], function () {
 
     });
 });
+
+
+Route::resource('tests', App\Http\Controllers\API\testAPIController::class);
