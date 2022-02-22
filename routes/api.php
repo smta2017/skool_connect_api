@@ -93,3 +93,6 @@ Route::resource('classes', App\Http\Controllers\API\ClassAPIController::class);
 
 
 Route::resource('apply_years', App\Http\Controllers\API\ApplyYearAPIController::class);
+
+
+Route::resource('nationalities', App\Http\Controllers\API\NationalityAPIController::class);
