@@ -45,6 +45,7 @@ class StudentRepository extends BaseRepository
         'photo',
         'code',
         'lang_id',
+        'user_id',
         'birth_certificate',
         'academic_house',
         'report_cards',

@@ -163,6 +163,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          format="int32"
  *      ),
  *      @SWG\Property(
+ *          property="user_id",
+ *          description="user_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="birth_certificate",
  *          description="birth_certificate",
  *          type="string"
@@ -264,7 +270,7 @@ class Student extends Model
     use HasFactory;
 
     public $table = 'students';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -299,6 +305,7 @@ class Student extends Model
         'photo',
         'code',
         'lang_id',
+        'user_id',
         'birth_certificate',
         'academic_house',
         'report_cards',
@@ -351,6 +358,7 @@ class Student extends Model
         'photo' => 'string',
         'code' => 'string',
         'lang_id' => 'integer',
+        'user_id' => 'integer',
         'birth_certificate' => 'string',
         'academic_house' => 'string',
         'report_cards' => 'string',
@@ -403,6 +411,7 @@ class Student extends Model
         'photo' => 'required',
         'code' => 'required',
         'lang_id' => 'required',
+        'user_id' => 'required',
         'birth_certificate' => 'required',
         'academic_house' => 'required',
         'report_cards' => 'required',
@@ -421,5 +430,5 @@ class Student extends Model
         'learn_support_details' => 'required'
     ];
 
-    
+
 }
