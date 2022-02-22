@@ -4,7 +4,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use Tests\ApiTestTrait;
-use App\Models\Class;
+use App\Models\StClass;
 
 class ClassApiTest extends TestCase
 {
@@ -15,7 +15,7 @@ class ClassApiTest extends TestCase
      */
     public function test_create_class()
     {
-        $class = Class::factory()->make()->toArray();
+        $class = StClass::factory()->make()->toArray();
 
         $this->response = $this->json(
             'POST',
@@ -30,7 +30,7 @@ class ClassApiTest extends TestCase
      */
     public function test_read_class()
     {
-        $class = Class::factory()->create();
+        $class = StClass::factory()->create();
 
         $this->response = $this->json(
             'GET',
@@ -45,8 +45,8 @@ class ClassApiTest extends TestCase
      */
     public function test_update_class()
     {
-        $class = Class::factory()->create();
-        $editedClass = Class::factory()->make()->toArray();
+        $class = StClass::factory()->create();
+        $editedClass = StClass::factory()->make()->toArray();
 
         $this->response = $this->json(
             'PUT',
@@ -62,7 +62,7 @@ class ClassApiTest extends TestCase
      */
     public function test_delete_class()
     {
-        $class = Class::factory()->create();
+        $class = StClass::factory()->create();
 
         $this->response = $this->json(
             'DELETE',

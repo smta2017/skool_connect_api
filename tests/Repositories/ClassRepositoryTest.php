@@ -1,6 +1,6 @@
 <?php namespace Tests\Repositories;
 
-use App\Models\Class;
+use App\Models\StClass;
 use App\Repositories\ClassRepository;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
@@ -26,14 +26,14 @@ class ClassRepositoryTest extends TestCase
      */
     public function test_create_class()
     {
-        $class = Class::factory()->make()->toArray();
+        $class = StClass::factory()->make()->toArray();
 
         $createdClass = $this->classRepo->create($class);
 
         $createdClass = $createdClass->toArray();
         $this->assertArrayHasKey('id', $createdClass);
         $this->assertNotNull($createdClass['id'], 'Created Class must have id specified');
-        $this->assertNotNull(Class::find($createdClass['id']), 'Class with given id must be in DB');
+        $this->assertNotNull(StClass::find($createdClass['id']), 'Class with given id must be in DB');
         $this->assertModelData($class, $createdClass);
     }
 
@@ -42,7 +42,7 @@ class ClassRepositoryTest extends TestCase
      */
     public function test_read_class()
     {
-        $class = Class::factory()->create();
+        $class = StClass::factory()->create();
 
         $dbClass = $this->classRepo->find($class->id);
 
@@ -55,8 +55,8 @@ class ClassRepositoryTest extends TestCase
      */
     public function test_update_class()
     {
-        $class = Class::factory()->create();
-        $fakeClass = Class::factory()->make()->toArray();
+        $class = StClass::factory()->create();
+        $fakeClass = StClass::factory()->make()->toArray();
 
         $updatedClass = $this->classRepo->update($fakeClass, $class->id);
 
@@ -70,11 +70,11 @@ class ClassRepositoryTest extends TestCase
      */
     public function test_delete_class()
     {
-        $class = Class::factory()->create();
+        $class = StClass::factory()->create();
 
         $resp = $this->classRepo->delete($class->id);
 
         $this->assertTrue($resp);
-        $this->assertNull(Class::find($class->id), 'Class should not exist in DB');
+        $this->assertNull(StClass::find($class->id), 'Class should not exist in DB');
     }
 }

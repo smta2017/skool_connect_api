@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\API;
 
-use App\Models\Class;
+use App\Models\StClass;
 use InfyOm\Generator\Request\APIRequest;
 
 class UpdateClassAPIRequest extends APIRequest
@@ -24,8 +24,8 @@ class UpdateClassAPIRequest extends APIRequest
      */
     public function rules()
     {
-        $rules = Class::$rules;
-        
+        $rules = StClass::$rules;
+
         return $rules;
     }
 }

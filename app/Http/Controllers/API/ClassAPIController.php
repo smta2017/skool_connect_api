@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Requests\API\CreateClassAPIRequest;
 use App\Http\Requests\API\UpdateClassAPIRequest;
-use App\Models\Class;
+use App\Models\StClass;
 use App\Repositories\ClassRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;

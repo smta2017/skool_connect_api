@@ -29,14 +29,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *      )
  * )
  */
-class Class extends Model
+class StClass extends Model
 {
     use SoftDeletes;
 
     use HasFactory;
 
     public $table = 'classes';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -64,5 +64,5 @@ class Class extends Model
         'name' => 'required'
     ];
 
-    
+
 }
