@@ -26,7 +26,7 @@ class BusFactory extends Factory
         'brand' => $this->faker->word,
         'seat_count' => $this->faker->randomDigitNotNull,
         'license_no' => $this->faker->word,
-        'license_expire' => $this->faker->word,
+        'license_expire' => $this->faker->date('Y-m-d'),
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];
