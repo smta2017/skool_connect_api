@@ -84,3 +84,6 @@ Route::resource('students', App\Http\Controllers\API\StudentAPIController::class
 
 
 Route::resource('divisions', App\Http\Controllers\API\DivisionAPIController::class);
+
+
+Route::resource('grades', App\Http\Controllers\API\GradeAPIController::class);
