@@ -16,6 +16,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="code",
+ *          description="code",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
  *          property="created_at",
  *          description="created_at",
  *          type="string",
@@ -36,14 +41,15 @@ class Language extends Model
     use HasFactory;
 
     public $table = 'languages';
-    
+
 
     protected $dates = ['deleted_at'];
 
 
 
     public $fillable = [
-        'name'
+        'name',
+        'code'
     ];
 
     /**
@@ -52,7 +58,8 @@ class Language extends Model
      * @var array
      */
     protected $casts = [
-        'name' => 'string'
+        'name' => 'string',
+        'code' => 'string'
     ];
 
     /**
@@ -61,8 +68,9 @@ class Language extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
+        'code' => 'required'
     ];
 
-    
+
 }

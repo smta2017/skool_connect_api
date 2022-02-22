@@ -17,7 +17,8 @@ class LanguageRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'name'
+        'name',
+        'code'
     ];
 
     /**
