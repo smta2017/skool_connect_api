@@ -105,3 +105,6 @@ Route::resource('religions', App\Http\Controllers\API\ReligionAPIController::cla
 
 
 Route::resource('languages', App\Http\Controllers\API\LanguageAPIController::class);
+
+
+Route::resource('buses', App\Http\Controllers\API\BusAPIController::class);
