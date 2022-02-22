@@ -6,6 +6,205 @@
     },
     "basePath": "/api/v1",
     "paths": {
+        "/students": {
+            "get": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Get a listing of the Students.",
+                "description": "Get all Students",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Student"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Store a newly created Student in storage",
+                "description": "Store Student",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Student that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Student"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Student"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/students/{id}": {
+            "get": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Display the specified Student",
+                "description": "Get Student",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Student",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Student"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Update the specified Student in storage",
+                "description": "Update Student",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Student",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Student that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Student"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Student"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Remove the specified Student from storage",
+                "description": "Delete Student",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Student",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/userTypes": {
             "get": {
                 "tags": [
@@ -207,6 +406,254 @@
         }
     },
     "definitions": {
+        "Student": {
+            "required": [
+                "first_name_en",
+                "middle_name_en",
+                "last_name_en",
+                "first_name_ar",
+                "middle_name_ar",
+                "last_name_ar",
+                "division_id",
+                "grade_id",
+                "class_id",
+                "passport_no",
+                "birth_date",
+                "birth_place",
+                "october_age_date",
+                "academic_year_applying_id",
+                "nationality_id",
+                "gender_id",
+                "bus_id",
+                "religion_id",
+                "previous_school_nursery",
+                "address",
+                "city",
+                "email",
+                "mobile",
+                "submit_date",
+                "photo",
+                "code",
+                "lang_id",
+                "birth_certificate",
+                "academic_house",
+                "report_cards",
+                "referance_letter",
+                "referance_name",
+                "referance_email",
+                "referance_phone",
+                "enroll_date",
+                "custody",
+                "foreigner",
+                "egy_returning",
+                "transfer_from_cairo",
+                "staff_child",
+                "staff_no",
+                "learn_support",
+                "learn_support_details"
+            ],
+            "properties": {
+                "first_name_en": {
+                    "description": "first_name_en",
+                    "type": "string"
+                },
+                "middle_name_en": {
+                    "description": "middle_name_en",
+                    "type": "string"
+                },
+                "last_name_en": {
+                    "description": "last_name_en",
+                    "type": "string"
+                },
+                "first_name_ar": {
+                    "description": "first_name_ar",
+                    "type": "string"
+                },
+                "middle_name_ar": {
+                    "description": "middle_name_ar",
+                    "type": "string"
+                },
+                "last_name_ar": {
+                    "description": "last_name_ar",
+                    "type": "string"
+                },
+                "division_id": {
+                    "description": "division_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "grade_id": {
+                    "description": "grade_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "class_id": {
+                    "description": "class_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "national_no": {
+                    "description": "national_no",
+                    "type": "string"
+                },
+                "passport_no": {
+                    "description": "passport_no",
+                    "type": "string"
+                },
+                "birth_date": {
+                    "description": "birth_date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "birth_place": {
+                    "description": "birth_place",
+                    "type": "string"
+                },
+                "october_age_date": {
+                    "description": "october_age_date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "academic_year_applying_id": {
+                    "description": "academic_year_applying_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nationality_id": {
+                    "description": "nationality_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "gender_id": {
+                    "description": "gender_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "bus_id": {
+                    "description": "bus_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "religion_id": {
+                    "description": "religion_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "previous_school_nursery": {
+                    "description": "previous_school_nursery",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "address",
+                    "type": "string"
+                },
+                "city": {
+                    "description": "city",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "mobile": {
+                    "description": "mobile",
+                    "type": "string"
+                },
+                "submit_date": {
+                    "description": "submit_date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "photo": {
+                    "description": "photo",
+                    "type": "string"
+                },
+                "code": {
+                    "description": "code",
+                    "type": "string"
+                },
+                "lang_id": {
+                    "description": "lang_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "birth_certificate": {
+                    "description": "birth_certificate",
+                    "type": "string"
+                },
+                "academic_house": {
+                    "description": "academic_house",
+                    "type": "string"
+                },
+                "report_cards": {
+                    "description": "report_cards",
+                    "type": "string"
+                },
+                "referance_letter": {
+                    "description": "referance_letter",
+                    "type": "string"
+                },
+                "referance_name": {
+                    "description": "referance_name",
+                    "type": "string"
+                },
+                "referance_email": {
+                    "description": "referance_email",
+                    "type": "string"
+                },
+                "referance_phone": {
+                    "description": "referance_phone",
+                    "type": "string"
+                },
+                "enroll_date": {
+                    "description": "enroll_date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "custody": {
+                    "description": "custody",
+                    "type": "string"
+                },
+                "foreigner": {
+                    "description": "foreigner",
+                    "type": "boolean"
+                },
+                "egy_returning": {
+                    "description": "egy_returning",
+                    "type": "boolean"
+                },
+                "transfer_from_cairo": {
+                    "description": "transfer_from_cairo",
+                    "type": "boolean"
+                },
+                "staff_child": {
+                    "description": "staff_child",
+                    "type": "boolean"
+                },
+                "staff_no": {
+                    "description": "staff_no",
+                    "type": "string"
+                },
+                "learn_support": {
+                    "description": "learn_support",
+                    "type": "boolean"
+                },
+                "learn_support_details": {
+                    "description": "learn_support_details",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
         "UserType": {
             "required": [
                 "name"

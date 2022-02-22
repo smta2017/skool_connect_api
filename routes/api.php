@@ -78,3 +78,6 @@ use Illuminate\Support\Facades\Route;
 
     });
 // });
+
+
+Route::resource('students', App\Http\Controllers\API\StudentAPIController::class);
