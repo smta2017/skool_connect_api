@@ -44,6 +44,7 @@ class CreateStudentsTable extends Migration
             $table->string('photo');
             $table->string('code');
             $table->integer('lang_id');
+            $table->integer('user_id');
             $table->string('birth_certificate');
             $table->string('academic_house');
             $table->string('report_cards');

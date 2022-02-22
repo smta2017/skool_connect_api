@@ -72,12 +72,10 @@ use Illuminate\Support\Facades\Route;
 
         Route::apiResource('/cities', CityController::class);
 
-        
+
         Route::apiResource('/areas', AreaController::class);
         Route::resource('userTypes', App\Http\Controllers\API\UserTypeAPIController::class);
 
+        Route::resource('students', App\Http\Controllers\API\StudentAPIController::class);
     });
 // });
-
-
-Route::resource('students', App\Http\Controllers\API\StudentAPIController::class);
