@@ -72,39 +72,29 @@ use Illuminate\Support\Facades\Route;
 
         Route::apiResource('/cities', CityController::class);
 
-        
+
         Route::apiResource('/areas', AreaController::class);
         Route::resource('userTypes', App\Http\Controllers\API\UserTypeAPIController::class);
 
+        Route::resource('students', App\Http\Controllers\API\StudentAPIController::class);
+
+        Route::resource('divisions', App\Http\Controllers\API\DivisionAPIController::class);
+
+        Route::resource('grades', App\Http\Controllers\API\GradeAPIController::class);
+
+        Route::resource('classes', App\Http\Controllers\API\ClassAPIController::class);
+
+        Route::resource('apply_years', App\Http\Controllers\API\ApplyYearAPIController::class);
+
+        Route::resource('nationalities', App\Http\Controllers\API\NationalityAPIController::class);
+
+        Route::resource('genders', App\Http\Controllers\API\GenderAPIController::class);
+
+        Route::resource('religions', App\Http\Controllers\API\ReligionAPIController::class);
+
+        Route::resource('languages', App\Http\Controllers\API\LanguageAPIController::class);
+
+        Route::resource('buses', App\Http\Controllers\API\BusAPIController::class);
+
     });
 // });
-
-
-Route::resource('students', App\Http\Controllers\API\StudentAPIController::class);
-
-
-Route::resource('divisions', App\Http\Controllers\API\DivisionAPIController::class);
-
-
-Route::resource('grades', App\Http\Controllers\API\GradeAPIController::class);
-
-
-Route::resource('classes', App\Http\Controllers\API\ClassAPIController::class);
-
-
-Route::resource('apply_years', App\Http\Controllers\API\ApplyYearAPIController::class);
-
-
-Route::resource('nationalities', App\Http\Controllers\API\NationalityAPIController::class);
-
-
-Route::resource('genders', App\Http\Controllers\API\GenderAPIController::class);
-
-
-Route::resource('religions', App\Http\Controllers\API\ReligionAPIController::class);
-
-
-Route::resource('languages', App\Http\Controllers\API\LanguageAPIController::class);
-
-
-Route::resource('buses', App\Http\Controllers\API\BusAPIController::class);
