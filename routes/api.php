@@ -102,3 +102,6 @@ Route::resource('genders', App\Http\Controllers\API\GenderAPIController::class);
 
 
 Route::resource('religions', App\Http\Controllers\API\ReligionAPIController::class);
+
+
+Route::resource('languages', App\Http\Controllers\API\LanguageAPIController::class);
