@@ -90,3 +90,6 @@ Route::resource('grades', App\Http\Controllers\API\GradeAPIController::class);
 
 
 Route::resource('classes', App\Http\Controllers\API\ClassAPIController::class);
+
+
+Route::resource('apply_years', App\Http\Controllers\API\ApplyYearAPIController::class);
