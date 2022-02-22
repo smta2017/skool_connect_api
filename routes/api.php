@@ -81,3 +81,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('students', App\Http\Controllers\API\StudentAPIController::class);
+
+
+Route::resource('divisions', App\Http\Controllers\API\DivisionAPIController::class);
