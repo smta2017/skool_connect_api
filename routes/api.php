@@ -96,5 +96,8 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('buses', App\Http\Controllers\API\BusAPIController::class);
 
+        Route::resource('parents', App\Http\Controllers\API\ParentAPIController::class);
+
+
     });
 // });
