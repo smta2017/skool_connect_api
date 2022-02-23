@@ -33,6 +33,7 @@ class ParentRepository extends BaseRepository
         'business_email',
         'alumni',
         'class_off',
+        'type',
         'school'
     ];
 

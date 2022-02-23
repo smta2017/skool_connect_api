@@ -32,6 +32,7 @@ class ParentResource extends JsonResource
             'business_email' => $this->business_email,
             'alumni' => $this->alumni,
             'class_off' => $this->class_off,
+            'type' => $this->type,
             'school' => $this->school,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

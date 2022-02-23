@@ -32,6 +32,7 @@ class CreateParentsTable extends Migration
             $table->string('business_email');
             $table->boolean('alumni');
             $table->string('class_off');
+            $table->string('type');
             $table->string('school');
             $table->timestamps();
             $table->softDeletes();

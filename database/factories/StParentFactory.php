@@ -38,6 +38,7 @@ class StParentFactory extends Factory
         'business_email' => $this->faker->word,
         'alumni' => $this->faker->word,
         'class_off' => $this->faker->word,
+        'type' => $this->faker->word,
         'school' => $this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')

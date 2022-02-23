@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * @SWG\Definition(
  *      definition="Parent",
- *      required={"first_name_en", "middle_name_en", "last_name_en", "first_name_ar", "middle_name_ar", "last_name_ar", "marital_status_id", "university", "occupation", "employer", "type_of_business", "business_address", "business_mobile", "business_email", "alumni", "class_off", "school"},
+ *      required={"first_name_en", "middle_name_en", "last_name_en", "first_name_ar", "middle_name_ar", "last_name_ar", "marital_status_id", "university", "occupation", "employer", "type_of_business", "business_address", "business_mobile", "business_email", "alumni", "class_off", "type", "school"},
  *      @SWG\Property(
  *          property="first_name_en",
  *          description="first_name_en",
@@ -92,6 +92,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="type",
+ *          description="type",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
  *          property="school",
  *          description="school",
  *          type="string"
@@ -140,6 +145,7 @@ class StParent extends Model
         'business_email',
         'alumni',
         'class_off',
+        'type',
         'school'
     ];
 
@@ -165,6 +171,7 @@ class StParent extends Model
         'business_email' => 'string',
         'alumni' => 'boolean',
         'class_off' => 'string',
+        'type' => 'string',
         'school' => 'string'
     ];
 
@@ -190,6 +197,7 @@ class StParent extends Model
         'business_email' => 'required',
         'alumni' => 'required',
         'class_off' => 'required',
+        'type' => 'required',
         'school' => 'required'
     ];
 
