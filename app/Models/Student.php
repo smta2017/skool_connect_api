@@ -430,5 +430,42 @@ class Student extends Model
         'learn_support_details' => 'required'
     ];
 
+    public function Division(){
+        return $this->belongsTo(Division::class);
+    }
+
+    public function Grade(){
+        return $this->belongsTo(Grade::class);
+    }
+
+    public function StClass(){
+        return $this->belongsTo(StClass::class,'class_id');
+    }
+
+    public function ApplyYear(){
+        return $this->belongsTo(ApplyYear::class,'academic_year_applying_id');
+    }
+
+    public function Nationality(){
+        return $this->belongsTo(Nationality::class);
+    }
+
+    public function Gender(){
+        return $this->belongsTo(Gender::class);
+    }
+
+    public function Religion(){
+        return $this->belongsTo(Religion::class);
+    }
+
+    public function Language(){
+        return $this->belongsTo(Language::class,'lang_id');
+    }
+
+    public function Bus(){
+        return $this->belongsTo(Bus::class);
+    }
+
+
 
 }

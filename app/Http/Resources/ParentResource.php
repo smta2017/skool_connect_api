@@ -22,7 +22,7 @@ class ParentResource extends JsonResource
             'first_name_ar' => $this->first_name_ar,
             'middle_name_ar' => $this->middle_name_ar,
             'last_name_ar' => $this->last_name_ar,
-            'marital_status_id' => $this->marital_status_id,
+            'marital_status' => $this->MaritalStatus->name,
             'university' => $this->university,
             'occupation' => $this->occupation,
             'employer' => $this->employer,

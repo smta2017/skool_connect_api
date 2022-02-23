@@ -36,7 +36,7 @@ class StParentFactory extends Factory
         'business_address' => $this->faker->word,
         'business_mobile' => $this->faker->word,
         'business_email' => $this->faker->word,
-        'alumni' => $this->faker->word,
+        'alumni' => $this->faker->randomElement(['0', '1']),
         'class_off' => $this->faker->word,
         'type' => $this->faker->word,
         'school' => $this->faker->word,

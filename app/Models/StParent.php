@@ -201,5 +201,8 @@ class StParent extends Model
         'school' => 'required'
     ];
 
+    public function MaritalStatus(){
+        return $this->belongsTo(MaritalStatus::class);
+    }
 
 }
