@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Religion::factory(config("app.seeder_count",10))->create();
         \App\Models\Language::factory(config("app.seeder_count",10))->create();
         \App\Models\StParent::factory(config("app.seeder_count",10))->create();
+        \App\Models\MaritalStatus::factory(config("app.seeder_count",10))->create();
     }
 }

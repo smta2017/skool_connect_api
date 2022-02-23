@@ -98,6 +98,7 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('parents', App\Http\Controllers\API\ParentAPIController::class);
 
+        Route::resource('marital_statuses', App\Http\Controllers\API\MaritalStatusAPIController::class);
 
     });
 // });
