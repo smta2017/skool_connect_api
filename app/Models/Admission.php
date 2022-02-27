@@ -55,8 +55,6 @@ class Admission extends Model
     use HasFactory;
 
     public $table = 'admissions';
-
-
     protected $dates = ['deleted_at'];
 
 
