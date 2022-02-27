@@ -19,7 +19,7 @@ class AdmissionResource extends JsonResource
             'student_id' => $this->student_id,
             'parent1_id' => $this->parent1_id,
             'parent2_id' => $this->parent2_id,
-            'status' => $this->status,
+            'admission_status_id' => $this->admission_status_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

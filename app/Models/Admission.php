@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * @SWG\Definition(
  *      definition="Admission",
- *      required={"student_id", "parent1_id", "parent2_id", "status"},
+ *      required={"student_id", "parent1_id", "parent2_id", "admission_status_id"},
  *      @SWG\Property(
  *          property="student_id",
  *          description="student_id",
@@ -29,8 +29,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="status",
- *          description="status",
+ *          property="admission_status_id",
+ *          description="admission_status_id",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -55,7 +55,7 @@ class Admission extends Model
     use HasFactory;
 
     public $table = 'admissions';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -65,7 +65,7 @@ class Admission extends Model
         'student_id',
         'parent1_id',
         'parent2_id',
-        'status'
+        'admission_status_id'
     ];
 
     /**
@@ -77,7 +77,7 @@ class Admission extends Model
         'student_id' => 'integer',
         'parent1_id' => 'integer',
         'parent2_id' => 'integer',
-        'status' => 'integer'
+        'admission_status_id' => 'integer'
     ];
 
     /**
@@ -89,8 +89,8 @@ class Admission extends Model
         'student_id' => 'required',
         'parent1_id' => 'required',
         'parent2_id' => 'required',
-        'status' => 'required'
+        'admission_status_id' => 'required'
     ];
 
-    
+
 }

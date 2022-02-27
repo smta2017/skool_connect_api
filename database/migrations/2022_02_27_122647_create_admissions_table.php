@@ -19,7 +19,7 @@ class CreateAdmissionsTable extends Migration
             $table->integer('student_id');
             $table->integer('parent1_id');
             $table->integer('parent2_id');
-            $table->integer('status');
+            $table->integer('admission_status_id');
             $table->timestamps();
             $table->softDeletes();
         });

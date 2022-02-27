@@ -25,7 +25,7 @@ class AdmissionFactory extends Factory
             'student_id' => $this->faker->randomDigitNotNull,
         'parent1_id' => $this->faker->randomDigitNotNull,
         'parent2_id' => $this->faker->randomDigitNotNull,
-        'status' => $this->faker->randomDigitNotNull,
+        'admission_status_id' => $this->faker->randomDigitNotNull,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

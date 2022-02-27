@@ -20,7 +20,7 @@ class AdmissionRepository extends BaseRepository
         'student_id',
         'parent1_id',
         'parent2_id',
-        'status'
+        'admission_status_id'
     ];
 
     /**
