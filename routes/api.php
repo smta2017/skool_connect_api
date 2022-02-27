@@ -84,7 +84,7 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('classes', App\Http\Controllers\API\ClassAPIController::class);
 
-        Route::resource('apply_years', App\Http\Controllers\API\ApplyYearAPIController::class);
+        Route::resource('applyYears', App\Http\Controllers\API\ApplyYearAPIController::class);
 
         Route::resource('nationalities', App\Http\Controllers\API\NationalityAPIController::class);
 
@@ -98,7 +98,7 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('parents', App\Http\Controllers\API\ParentAPIController::class);
 
-        Route::resource('marital_statuses', App\Http\Controllers\API\MaritalStatusAPIController::class);
+        Route::resource('maritalStatuses', App\Http\Controllers\API\MaritalStatusAPIController::class);
 
     });
 // });
