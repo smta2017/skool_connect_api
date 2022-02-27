@@ -1,0 +1,96 @@
+<?php
+
+namespace App\Models;
+
+use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+/**
+ * @SWG\Definition(
+ *      definition="Admission",
+ *      required={"student_id", "parent1_id", "parent2_id", "status"},
+ *      @SWG\Property(
+ *          property="student_id",
+ *          description="student_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="parent1_id",
+ *          description="parent1_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="parent2_id",
+ *          description="parent2_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="status",
+ *          description="status",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="created_at",
+ *          description="created_at",
+ *          type="string",
+ *          format="date-time"
+ *      ),
+ *      @SWG\Property(
+ *          property="updated_at",
+ *          description="updated_at",
+ *          type="string",
+ *          format="date-time"
+ *      )
+ * )
+ */
+class Admission extends Model
+{
+    use SoftDeletes;
+
+    use HasFactory;
+
+    public $table = 'admissions';
+    
+
+    protected $dates = ['deleted_at'];
+
+
+
+    public $fillable = [
+        'student_id',
+        'parent1_id',
+        'parent2_id',
+        'status'
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'student_id' => 'integer',
+        'parent1_id' => 'integer',
+        'parent2_id' => 'integer',
+        'status' => 'integer'
+    ];
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        'student_id' => 'required',
+        'parent1_id' => 'required',
+        'parent2_id' => 'required',
+        'status' => 'required'
+    ];
+
+    
+}
