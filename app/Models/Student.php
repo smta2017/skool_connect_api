@@ -392,7 +392,7 @@ class Student extends Model
         'division_id' => 'required',
         'grade_id' => 'required',
         'class_id' => 'required',
-        'national_no' => 'reqiured',
+        'national_no' => 'required',
         'passport_no' => 'required',
         'birth_date' => 'required',
         'birth_place' => 'required',
