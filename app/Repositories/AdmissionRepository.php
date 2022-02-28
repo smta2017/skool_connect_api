@@ -2,12 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Http\Requests\API\CreateAdmissionAPIRequest;
 use App\Models\Admission;
-use App\Models\StParent;
-use App\Models\Student;
-use App\Repositories\BaseRepository;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class AdmissionRepository
@@ -45,16 +40,19 @@ class AdmissionRepository extends BaseRepository
         return Admission::class;
     }
 
-    public function create( $input)
+    public function create($input)
     {
         $model = null;
         DB::beginTransaction();
         try {
-            $model = $this->model->newInstance($input);
-            $model->Student()->create($input['student']);
-            $model->Parent1()->create($input['parent1']);
-            $model->Parent2()->create($input['parent2']);
-            $model->save();
+            $model = new Admission();
+            $st_res = $model->Student()->create($input['student']);
+            $pr_res1 = $model->Parent1()->create($input['parent1']);
+            $pr_res2 = $model->Parent2()->create($input['parent2']);
+            $input['student_id'] = $st_res['id'];
+            $input['parent1_id'] = $pr_res1['id'];
+            $input['parent2_id'] = $pr_res2['id'];
+            $model->create($input);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
