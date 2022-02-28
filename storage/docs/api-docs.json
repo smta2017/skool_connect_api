@@ -3468,8 +3468,8 @@
                     "description": "last_name_ar",
                     "type": "string"
                 },
-                "division": {
-                    "description": "division",
+                "division_id": {
+                    "description": "division_id",
                     "type": "integer",
                     "format": "int32"
                 },
