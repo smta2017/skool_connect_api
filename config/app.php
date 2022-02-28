@@ -128,7 +128,7 @@ return [
     'enable_email_verification' => env('EMAIL_VERIFICATION', true),
 
     'enable_phone_verification' => env('PHONE_VERIFICATION', true),
-    
+
     'enable_registration' => env(' REGISTRATION', true),
 
     /*
@@ -138,7 +138,7 @@ return [
     |
     */
 
-    'seeder_count' => 50,
+    'seeder_count' => 20,
 
     /*
     |--------------------------------------------------------------------------

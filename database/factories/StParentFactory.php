@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\MaritalStatus;
 use App\Models\StParent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -28,7 +29,7 @@ class StParentFactory extends Factory
         'first_name_ar' => $this->faker->word,
         'middle_name_ar' => $this->faker->word,
         'last_name_ar' => $this->faker->word,
-        'marital_status_id' => $this->faker->randomDigitNotNull,
+        'marital_status_id' => MaritalStatus::pluck('id')->random(),
         'university' => $this->faker->word,
         'occupation' => $this->faker->word,
         'employer' => $this->faker->word,

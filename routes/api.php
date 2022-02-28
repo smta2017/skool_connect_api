@@ -100,5 +100,7 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('maritalStatuses', App\Http\Controllers\API\MaritalStatusAPIController::class);
 
+        Route::resource('admissions', App\Http\Controllers\API\AdmissionAPIController::class);
+        Route::resource('admission_statuses', App\Http\Controllers\API\AdmissionStatusAPIController::class);
     });
 // });
