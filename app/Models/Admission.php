@@ -92,5 +92,21 @@ class Admission extends Model
         'admission_status_id' => 'required'
     ];
 
+    public function Student(){
+        return $this->belongsTo(Student::class);
+    }
+
+    public function Parent1(){
+        return $this->belongsTo(StParent::class,'parent1_id');
+    }
+
+    public function Parent2(){
+        return $this->belongsTo(StParent::class,'parent2_id');
+    }
+
+    public function AdmissionStatus(){
+        return $this->belongsTo(AdmissionStatus::class);
+    }
+
 
 }

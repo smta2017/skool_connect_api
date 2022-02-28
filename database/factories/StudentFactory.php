@@ -2,6 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Division;
+use App\Models\Language;
+use App\Models\Nationality;
+use App\Models\Religion;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -29,19 +33,19 @@ class StudentFactory extends Factory
             'first_name_ar' => $this->faker->word,
             'middle_name_ar' => $this->faker->word,
             'last_name_ar' => $this->faker->word,
-            'division_id' => $this->faker->randomDigitNotNull,
-            'grade_id' => $this->faker->randomDigitNotNull,
-            'class_id' => $this->faker->randomDigitNotNull,
+            'division_id' => Division::pluck('id')->random(),
+            'grade_id' => Grade::pluck('id')->random(),
+            'class_id' => StClass::pluck('id')->random(),
             'national_no' => $this->faker->word,
             'passport_no' => $this->faker->word,
             'birth_date' => $this->faker->date('Y-m-d'),
             'birth_place' => $this->faker->word,
             'october_age_date' => $this->faker->date('Y-m-d'),
             'academic_year_applying_id' => $this->faker->randomDigitNotNull,
-            'nationality_id' => $this->faker->randomDigitNotNull,
-            'gender_id' => $this->faker->randomDigitNotNull,
-            'bus_id' => $this->faker->randomDigitNotNull,
-            'religion_id' => $this->faker->randomDigitNotNull,
+            'nationality_id' => Nationality::pluck('id')->random(),
+            'gender_id' => Gender::pluck('id')->random(),
+            'bus_id' => Bus::pluck('id')->random(),
+            'religion_id' => Religion::pluck('id')->random(),
             'previous_school_nursery' => $this->faker->word,
             'address' => $this->faker->word,
             'city' => $this->faker->word,
@@ -50,7 +54,7 @@ class StudentFactory extends Factory
             'submit_date' => $this->faker->date('Y-m-d'),
             'photo' => $this->faker->word,
             'code' => $this->faker->word,
-            'lang_id' => $this->faker->randomDigitNotNull,
+            'lang_id' => Language::pluck('id')->random(),
             'birth_certificate' => $this->faker->word,
             'academic_house' => $this->faker->word,
             'report_cards' => $this->faker->word,

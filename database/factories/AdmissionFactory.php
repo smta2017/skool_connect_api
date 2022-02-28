@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Admission;
+use App\Models\AdmissionStatus;
+use App\Models\StParent;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AdmissionFactory extends Factory
@@ -22,10 +25,10 @@ class AdmissionFactory extends Factory
     public function definition()
     {
         return [
-            'student_id' => $this->faker->randomDigitNotNull,
-        'parent1_id' => $this->faker->randomDigitNotNull,
-        'parent2_id' => $this->faker->randomDigitNotNull,
-        'admission_status_id' => $this->faker->randomDigitNotNull,
+            'student_id' => Student::pluck('id')->random(),
+        'parent1_id' => StParent::pluck('id')->random(),
+        'parent2_id' => StParent::pluck('id')->random(),
+        'admission_status_id' => AdmissionStatus::pluck('id')->random(),
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

@@ -16,10 +16,10 @@ class AdmissionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'student_id' => $this->student_id,
-            'parent1_id' => $this->parent1_id,
-            'parent2_id' => $this->parent2_id,
-            'admission_status_id' => $this->admission_status_id,
+            'student' => new StudentResource($this->Student),
+            'parent1' => new ParentResource($this->Parent1),
+            'parent2' => new ParentResource($this->Parent2),
+            'admission_status' => new AdmissionStatusResource($this->AdmissionStatus),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(config("app.seeder_count",10))->create();
         \App\Models\UserType::factory(config("app.seeder_count",10))->create();
-        \App\Models\Student::factory(config("app.seeder_count",10))->create();
         \App\Models\Division::factory(config("app.seeder_count",10))->create();
         \App\Models\Grade::factory(config("app.seeder_count",10))->create();
         \App\Models\StClass::factory(config("app.seeder_count",10))->create();
@@ -25,7 +24,11 @@ class DatabaseSeeder extends Seeder
         \App\Models\Bus::factory(config("app.seeder_count",10))->create();
         \App\Models\Religion::factory(config("app.seeder_count",10))->create();
         \App\Models\Language::factory(config("app.seeder_count",10))->create();
-        \App\Models\StParent::factory(config("app.seeder_count",10))->create();
+        \App\Models\Student::factory(config("app.seeder_count",10))->create();
         \App\Models\MaritalStatus::factory(config("app.seeder_count",10))->create();
+        \App\Models\StParent::factory(config("app.seeder_count",10))->create();
+        \App\Models\AdmissionStatus::factory(config("app.seeder_count",10))->create();
+        \App\Models\Admission::factory(config("app.seeder_count",10))->create();
+
     }
 }
