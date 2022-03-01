@@ -107,3 +107,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('evaluation_cards', App\Http\Controllers\API\EvaluationCardAPIController::class);
+
+
+Route::resource('school_buildings', App\Http\Controllers\API\SchoolBuildingAPIController::class);

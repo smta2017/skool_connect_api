@@ -176,5 +176,14 @@ class EvaluationCard extends Model
 
     ];
 
+    public function SchoolBuilding(){
+        return $this->belongsTo(SchoolBuilding::class);
+    }
+
+    public function Admission(){
+        return $this->belongsTo(Admission::class);
+    }
+
+
 
 }
