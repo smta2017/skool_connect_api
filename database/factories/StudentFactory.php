@@ -2,10 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Bus;
 use App\Models\Division;
+use App\Models\Gender;
+use App\Models\Grade;
 use App\Models\Language;
 use App\Models\Nationality;
 use App\Models\Religion;
+use App\Models\StClass;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
