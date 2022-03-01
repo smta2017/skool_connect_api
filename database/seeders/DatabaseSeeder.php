@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\StParent::factory(config("app.seeder_count",10))->create();
         \App\Models\AdmissionStatus::factory(config("app.seeder_count",10))->create();
         \App\Models\Admission::factory(config("app.seeder_count",10))->create();
+        \App\Models\SchoolBuilding::factory(config("app.seeder_count",10))->create();
+        \App\Models\EvaluationCard::factory(config("app.seeder_count",10))->create();
 
     }
 }

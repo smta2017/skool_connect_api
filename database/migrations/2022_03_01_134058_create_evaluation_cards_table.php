@@ -30,7 +30,7 @@ class CreateEvaluationCardsTable extends Migration
             $table->enum('principal_recommendation',['Yes','Yes With Condition','Re-assess','No','More Info Needed']);
             $table->enum('principal_ability',['Low','Medium','High']);
             $table->text('director_comment');
-            $table->string('application_status');
+            $table->enum('application_status',['Waiting List','Accepted','Rejected']);
             $table->integer('admission_id');
             $table->timestamps();
             $table->softDeletes();

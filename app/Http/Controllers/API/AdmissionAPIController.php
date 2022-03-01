@@ -300,4 +300,18 @@ class AdmissionAPIController extends AppBaseController
 
         return $this->sendSuccess('Admission deleted successfully');
     }
+
+    public function change_status($id ,UpdateAdmissionAPIRequest $request){
+        /** @var Admission $admission */
+        $input = $request->all();
+        $status = $input['status'];
+        $admission = $this->admissionRepository->find($id);
+
+        if (empty($admission)) {
+            return $this->sendError('Admission not found');
+        }
+        $admission->status = $status;
+        $admission->save();
+        return $this->sendSuccess('Status updated successfully');
+    }
 }
