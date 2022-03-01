@@ -52,7 +52,7 @@
                     {
                         "name": "body",
                         "in": "body",
-                        "description": "Admission that should be stored",
+                        "description": "PLEASE NOTE : REMOVE ARRAY BRACKETS FROM ARRAY OBJECTS '[' ",
                         "required": false,
                         "schema": {
                             "$ref": "#/definitions/Admission"
@@ -2994,42 +2994,278 @@
     },
     "definitions": {
         "Admission": {
-            "required": [
-                "student_id",
-                "parent1_id",
-                "parent2_id",
-                "admission_status_id"
-            ],
             "properties": {
-                "student_id": {
-                    "description": "student_id",
-                    "type": "integer",
-                    "format": "int32"
+                "student": {
+                    "description": "student",
+                    "items": {
+                        "properties": {
+                            "first_name_en": {
+                                "type": "string"
+                            },
+                            "middle_name_en": {
+                                "type": "string"
+                            },
+                            "last_name_en": {
+                                "type": "string"
+                            },
+                            "first_name_ar": {
+                                "type": "string"
+                            },
+                            "middle_name_ar": {
+                                "type": "string"
+                            },
+                            "last_name_ar": {
+                                "type": "string"
+                            },
+                            "division_id": {
+                                "type": "string"
+                            },
+                            "grade_id": {
+                                "type": "string"
+                            },
+                            "class_id": {
+                                "type": "string"
+                            },
+                            "passport_no": {
+                                "type": "string"
+                            },
+                            "birth_date": {
+                                "type": "string"
+                            },
+                            "birth_place": {
+                                "type": "string"
+                            },
+                            "october_age_date": {
+                                "type": "string"
+                            },
+                            "academic_year_applying_id": {
+                                "type": "string"
+                            },
+                            "nationality_id": {
+                                "type": "string"
+                            },
+                            "gender_id": {
+                                "type": "string"
+                            },
+                            "bus_id": {
+                                "type": "string"
+                            },
+                            "religion_id": {
+                                "type": "string"
+                            },
+                            "previous_school_nursery": {
+                                "type": "string"
+                            },
+                            "address": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "mobile": {
+                                "type": "string"
+                            },
+                            "lang_id": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "birth_certificate": {
+                                "type": "string"
+                            },
+                            "academic_house": {
+                                "type": "string"
+                            },
+                            "report_cards": {
+                                "type": "string"
+                            },
+                            "referance_letter": {
+                                "type": "string"
+                            },
+                            "referance_name": {
+                                "type": "string"
+                            },
+                            "referance_email": {
+                                "type": "string"
+                            },
+                            "referance_phone": {
+                                "type": "string"
+                            },
+                            "enroll_date": {
+                                "type": "string"
+                            },
+                            "custody": {
+                                "type": "string"
+                            },
+                            "foreigner": {
+                                "type": "string"
+                            },
+                            "egy_returning": {
+                                "type": "string"
+                            },
+                            "transfer_from_cairo": {
+                                "type": "string"
+                            },
+                            "staff_child": {
+                                "type": "string"
+                            },
+                            "staff_no": {
+                                "type": "string"
+                            },
+                            "learn_support": {
+                                "type": "string"
+                            },
+                            "learn_support_details": {
+                                "type": "string"
+                            },
+                            "photo": {
+                                "type": "string"
+                            },
+                            "code": {
+                                "type": "string"
+                            },
+                            "national_no": {
+                                "type": "string"
+                            },
+                            "submit_date": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
                 },
-                "parent1_id": {
-                    "description": "parent1_id",
-                    "type": "integer",
-                    "format": "int32"
+                "parent1": {
+                    "description": "parent1",
+                    "items": {
+                        "properties": {
+                            "first_name_en": {
+                                "type": "string"
+                            },
+                            "middle_name_en": {
+                                "type": "string"
+                            },
+                            "last_name_en": {
+                                "type": "string"
+                            },
+                            "first_name_ar": {
+                                "type": "string"
+                            },
+                            "middle_name_ar": {
+                                "type": "string"
+                            },
+                            "last_name_ar": {
+                                "type": "string"
+                            },
+                            "marital_status_id": {
+                                "type": "string"
+                            },
+                            "university": {
+                                "type": "string"
+                            },
+                            "occupation": {
+                                "type": "string"
+                            },
+                            "employer": {
+                                "type": "string"
+                            },
+                            "type_of_business": {
+                                "type": "string"
+                            },
+                            "business_address": {
+                                "type": "string"
+                            },
+                            "business_mobile": {
+                                "type": "string"
+                            },
+                            "business_email": {
+                                "type": "string"
+                            },
+                            "alumni": {
+                                "type": "string"
+                            },
+                            "class_off": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "school": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
                 },
-                "parent2_id": {
-                    "description": "parent2_id",
-                    "type": "integer",
-                    "format": "int32"
+                "parent2": {
+                    "description": "parent2",
+                    "items": {
+                        "properties": {
+                            "first_name_en": {
+                                "type": "string"
+                            },
+                            "middle_name_en": {
+                                "type": "string"
+                            },
+                            "last_name_en": {
+                                "type": "string"
+                            },
+                            "first_name_ar": {
+                                "type": "string"
+                            },
+                            "middle_name_ar": {
+                                "type": "string"
+                            },
+                            "last_name_ar": {
+                                "type": "string"
+                            },
+                            "marital_status_id": {
+                                "type": "string"
+                            },
+                            "university": {
+                                "type": "string"
+                            },
+                            "occupation": {
+                                "type": "string"
+                            },
+                            "employer": {
+                                "type": "string"
+                            },
+                            "type_of_business": {
+                                "type": "string"
+                            },
+                            "business_address": {
+                                "type": "string"
+                            },
+                            "business_mobile": {
+                                "type": "string"
+                            },
+                            "business_email": {
+                                "type": "string"
+                            },
+                            "alumni": {
+                                "type": "string"
+                            },
+                            "class_off": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "school": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
                 },
                 "admission_status_id": {
                     "description": "admission_status_id",
                     "type": "integer",
                     "format": "int32"
-                },
-                "created_at": {
-                    "description": "created_at",
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "updated_at": {
-                    "description": "updated_at",
-                    "type": "string",
-                    "format": "date-time"
                 }
             }
         },
