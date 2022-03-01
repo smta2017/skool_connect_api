@@ -2,28 +2,28 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Requests\API\CreateAdmissionAPIRequest;
-use App\Http\Requests\API\UpdateAdmissionAPIRequest;
-use App\Models\Admission;
-use App\Repositories\AdmissionRepository;
+use App\Http\Requests\API\CreateSchoolBuildingAPIRequest;
+use App\Http\Requests\API\UpdateSchoolBuildingAPIRequest;
+use App\Models\SchoolBuilding;
+use App\Repositories\SchoolBuildingRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
-use App\Http\Resources\AdmissionResource;
+use App\Http\Resources\SchoolBuildingResource;
 use Response;
 
 /**
- * Class AdmissionController
+ * Class SchoolBuildingController
  * @package App\Http\Controllers\API
  */
 
-class AdmissionAPIController extends AppBaseController
+class SchoolBuildingAPIController extends AppBaseController
 {
-    /** @var  AdmissionRepository */
-    private $admissionRepository;
+    /** @var  SchoolBuildingRepository */
+    private $schoolBuildingRepository;
 
-    public function __construct(AdmissionRepository $admissionRepo)
+    public function __construct(SchoolBuildingRepository $schoolBuildingRepo)
     {
-        $this->admissionRepository = $admissionRepo;
+        $this->schoolBuildingRepository = $schoolBuildingRepo;
     }
 
     /**
@@ -31,10 +31,10 @@ class AdmissionAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/admissions",
-     *      summary="Get a listing of the Admissions.",
-     *      tags={"Admission"},
-     *      description="Get all Admissions",
+     *      path="/schoolBuildings",
+     *      summary="Get a listing of the SchoolBuildings.",
+     *      tags={"SchoolBuilding"},
+     *      description="Get all SchoolBuildings",
      *      produces={"application/json"},
      *      @SWG\Response(
      *          response=200,
@@ -48,7 +48,7 @@ class AdmissionAPIController extends AppBaseController
      *              @SWG\Property(
      *                  property="data",
      *                  type="array",
-     *                  @SWG\Items(ref="#/definitions/Admission")
+     *                  @SWG\Items(ref="#/definitions/SchoolBuilding")
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -60,31 +60,31 @@ class AdmissionAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $admissions = $this->admissionRepository->all(
+        $schoolBuildings = $this->schoolBuildingRepository->all(
             $request->except(['skip', 'limit']),
             $request->get('skip'),
             $request->get('limit')
         );
 
-        return $this->sendResponse(AdmissionResource::collection($admissions), 'Admissions retrieved successfully');
+        return $this->sendResponse(SchoolBuildingResource::collection($schoolBuildings), 'School Buildings retrieved successfully');
     }
 
     /**
-     * @param CreateAdmissionAPIRequest $request
+     * @param CreateSchoolBuildingAPIRequest $request
      * @return Response
      *
      * @SWG\Post(
-     *      path="/admissions",
-     *      summary="Store a newly created Admission in storage",
-     *      tags={"Admission"},
-     *      description="Store Admission",
+     *      path="/schoolBuildings",
+     *      summary="Store a newly created SchoolBuilding in storage",
+     *      tags={"SchoolBuilding"},
+     *      description="Store SchoolBuilding",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="PLEASE NOTE : REMOVE ARRAY BRACKETS FROM ARRAY OBJECTS '[' ",
+     *          description="SchoolBuilding that should be stored",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/Admission")
+     *          @SWG\Schema(ref="#/definitions/SchoolBuilding")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -97,7 +97,7 @@ class AdmissionAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Admission"
+     *                  ref="#/definitions/SchoolBuilding"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -107,13 +107,13 @@ class AdmissionAPIController extends AppBaseController
      *      )
      * )
      */
-    public function store(CreateAdmissionAPIRequest $request)
+    public function store(CreateSchoolBuildingAPIRequest $request)
     {
         $input = $request->all();
 
-        $admission = $this->admissionRepository->create($input);
+        $schoolBuilding = $this->schoolBuildingRepository->create($input);
 
-        return $this->sendResponse(new AdmissionResource($admission), 'Admission saved successfully');
+        return $this->sendResponse(new SchoolBuildingResource($schoolBuilding), 'School Building saved successfully');
     }
 
     /**
@@ -121,14 +121,14 @@ class AdmissionAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/admissions/{id}",
-     *      summary="Display the specified Admission",
-     *      tags={"Admission"},
-     *      description="Get Admission",
+     *      path="/schoolBuildings/{id}",
+     *      summary="Display the specified SchoolBuilding",
+     *      tags={"SchoolBuilding"},
+     *      description="Get SchoolBuilding",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Admission",
+     *          description="id of SchoolBuilding",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -144,7 +144,7 @@ class AdmissionAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Admission"
+     *                  ref="#/definitions/SchoolBuilding"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -156,30 +156,30 @@ class AdmissionAPIController extends AppBaseController
      */
     public function show($id)
     {
-        /** @var Admission $admission */
-        $admission = $this->admissionRepository->find($id);
+        /** @var SchoolBuilding $schoolBuilding */
+        $schoolBuilding = $this->schoolBuildingRepository->find($id);
 
-        if (empty($admission)) {
-            return $this->sendError('Admission not found');
+        if (empty($schoolBuilding)) {
+            return $this->sendError('School Building not found');
         }
 
-        return $this->sendResponse(new AdmissionResource($admission), 'Admission retrieved successfully');
+        return $this->sendResponse(new SchoolBuildingResource($schoolBuilding), 'School Building retrieved successfully');
     }
 
     /**
      * @param int $id
-     * @param UpdateAdmissionAPIRequest $request
+     * @param UpdateSchoolBuildingAPIRequest $request
      * @return Response
      *
      * @SWG\Put(
-     *      path="/admissions/{id}",
-     *      summary="Update the specified Admission in storage",
-     *      tags={"Admission"},
-     *      description="Update Admission",
+     *      path="/schoolBuildings/{id}",
+     *      summary="Update the specified SchoolBuilding in storage",
+     *      tags={"SchoolBuilding"},
+     *      description="Update SchoolBuilding",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Admission",
+     *          description="id of SchoolBuilding",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -187,9 +187,9 @@ class AdmissionAPIController extends AppBaseController
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="Admission that should be updated",
+     *          description="SchoolBuilding that should be updated",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/Admission")
+     *          @SWG\Schema(ref="#/definitions/SchoolBuilding")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -202,7 +202,7 @@ class AdmissionAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Admission"
+     *                  ref="#/definitions/SchoolBuilding"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -212,20 +212,20 @@ class AdmissionAPIController extends AppBaseController
      *      )
      * )
      */
-    public function update($id, UpdateAdmissionAPIRequest $request)
+    public function update($id, UpdateSchoolBuildingAPIRequest $request)
     {
         $input = $request->all();
 
-        /** @var Admission $admission */
-        $admission = $this->admissionRepository->find($id);
+        /** @var SchoolBuilding $schoolBuilding */
+        $schoolBuilding = $this->schoolBuildingRepository->find($id);
 
-        if (empty($admission)) {
-            return $this->sendError('Admission not found');
+        if (empty($schoolBuilding)) {
+            return $this->sendError('School Building not found');
         }
 
-        $admission = $this->admissionRepository->update($input, $id);
+        $schoolBuilding = $this->schoolBuildingRepository->update($input, $id);
 
-        return $this->sendResponse(new AdmissionResource($admission), 'Admission updated successfully');
+        return $this->sendResponse(new SchoolBuildingResource($schoolBuilding), 'SchoolBuilding updated successfully');
     }
 
     /**
@@ -233,14 +233,14 @@ class AdmissionAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Delete(
-     *      path="/admissions/{id}",
-     *      summary="Remove the specified Admission from storage",
-     *      tags={"Admission"},
-     *      description="Delete Admission",
+     *      path="/schoolBuildings/{id}",
+     *      summary="Remove the specified SchoolBuilding from storage",
+     *      tags={"SchoolBuilding"},
+     *      description="Delete SchoolBuilding",
      *      produces={"application/json"},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Admission",
+     *          description="id of SchoolBuilding",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -268,29 +268,15 @@ class AdmissionAPIController extends AppBaseController
      */
     public function destroy($id)
     {
-        /** @var Admission $admission */
-        $admission = $this->admissionRepository->find($id);
+        /** @var SchoolBuilding $schoolBuilding */
+        $schoolBuilding = $this->schoolBuildingRepository->find($id);
 
-        if (empty($admission)) {
-            return $this->sendError('Admission not found');
+        if (empty($schoolBuilding)) {
+            return $this->sendError('School Building not found');
         }
 
-        $admission->delete();
+        $schoolBuilding->delete();
 
-        return $this->sendSuccess('Admission deleted successfully');
-    }
-
-    public function change_status($id ,UpdateAdmissionAPIRequest $request){
-        /** @var Admission $admission */
-        $input = $request->all();
-        $status = $input['status'];
-        $admission = $this->admissionRepository->find($id);
-
-        if (empty($admission)) {
-            return $this->sendError('Admission not found');
-        }
-        $admission->status = $status;
-        $admission->save();
-        return $this->sendSuccess('Status updated successfully');
+        return $this->sendSuccess('School Building deleted successfully');
     }
 }
