@@ -104,3 +104,6 @@ use Illuminate\Support\Facades\Route;
         Route::resource('admission_statuses', App\Http\Controllers\API\AdmissionStatusAPIController::class);
     });
 // });
+
+
+Route::resource('evaluation_cards', App\Http\Controllers\API\EvaluationCardAPIController::class);
