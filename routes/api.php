@@ -98,13 +98,13 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('parents', App\Http\Controllers\API\ParentAPIController::class);
 
-        Route::resource('marital_statuses', App\Http\Controllers\API\MaritalStatusAPIController::class);
+        Route::resource('maritalStatuses', App\Http\Controllers\API\MaritalStatusAPIController::class);
 
         Route::resource('admissions', App\Http\Controllers\API\AdmissionAPIController::class);
-        Route::resource('admission_statuses', App\Http\Controllers\API\AdmissionStatusAPIController::class);
+        Route::resource('admissionStatuses', App\Http\Controllers\API\AdmissionStatusAPIController::class);
 
-        Route::resource('evaluation_cards', App\Http\Controllers\API\EvaluationCardAPIController::class);
-        Route::resource('school_buildings', App\Http\Controllers\API\SchoolBuildingAPIController::class);
+        Route::resource('evaluationCards', App\Http\Controllers\API\EvaluationCardAPIController::class);
+        Route::resource('schoolBuildings', App\Http\Controllers\API\SchoolBuildingAPIController::class);
 
         Route::post('change_admission_status/{id}', [App\Http\Controllers\API\AdmissionAPIController::class,'change_status']);
 
