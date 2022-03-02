@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $AS = new \App\Models\AdmissionStatus();
         $AS->truncate();
+        $AS->insert(['name' => 'New']);
         $AS->insert(['name' => 'To Assess']);
         $AS->create(['name' => 'Re-Assess']);
         $AS->create(['name' => 'To Interview']);

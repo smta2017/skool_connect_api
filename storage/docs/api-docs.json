@@ -3862,7 +3862,12 @@
                 },
                 "application_status": {
                     "description": "application_status",
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "Waiting List",
+                        "Accepted",
+                        "Rejected"
+                    ]
                 },
                 "admission_id": {
                     "description": "admission_id",

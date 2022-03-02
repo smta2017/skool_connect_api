@@ -17,7 +17,7 @@ class EvaluationCardResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'student' => $this->Admission->Student,
+//            'student' => $this->Admission->Student,
             'exam_date' => $this->exam_date,
             'exam_building_id' => $this->exam_building_id,
             'exam_date2' => $this->exam_date2,

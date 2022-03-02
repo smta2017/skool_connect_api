@@ -93,7 +93,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *      @SWG\Property(
  *          property="application_status",
  *          description="application_status",
- *          type="string"
+ *          type="string",
+ *         enum={"Waiting List","Accepted","Rejected"},
  *      ),
  *      @SWG\Property(
  *          property="admission_id",
