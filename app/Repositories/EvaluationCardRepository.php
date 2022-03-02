@@ -52,4 +52,13 @@ class EvaluationCardRepository extends BaseRepository
     {
         return EvaluationCard::class;
     }
+
+    public function update($input, $id)
+    {
+        $query = $this->model->newQuery();
+        $model = $query->findOrFail($id);
+        $model->fill($input);
+        $model->save();
+        return $model;
+    }
 }

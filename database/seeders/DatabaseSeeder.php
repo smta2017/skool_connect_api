@@ -13,6 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $AS = new \App\Models\AdmissionStatus();
+        $AS->truncate();
+        $AS->insert(['name' => 'To Assess']);
+        $AS->create(['name' => 'Re-Assess']);
+        $AS->create(['name' => 'To Interview']);
+        $AS->create(['name' => 'Waiting List']);
+        $AS->create(['name' => 'Accepted']);
+        $AS->create(['name' => 'Rejected']);
         \App\Models\User::factory(config("app.seeder_count",10))->create();
         \App\Models\UserType::factory(config("app.seeder_count",10))->create();
         \App\Models\Division::factory(config("app.seeder_count",10))->create();
@@ -27,7 +35,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Student::factory(config("app.seeder_count",10))->create();
         \App\Models\MaritalStatus::factory(config("app.seeder_count",10))->create();
         \App\Models\StParent::factory(config("app.seeder_count",10))->create();
-        \App\Models\AdmissionStatus::factory(config("app.seeder_count",10))->create();
         \App\Models\Admission::factory(config("app.seeder_count",10))->create();
         \App\Models\SchoolBuilding::factory(config("app.seeder_count",10))->create();
         \App\Models\EvaluationCard::factory(config("app.seeder_count",10))->create();

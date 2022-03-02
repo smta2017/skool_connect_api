@@ -3,6 +3,7 @@
 namespace App\Repositories;
 use Illuminate\Support\Facades\DB;
 use App\Models\Admission;
+use App\Models\EvaluationCard;
 
 /**
  * Class AdmissionRepository
@@ -53,8 +54,9 @@ class AdmissionRepository extends BaseRepository
             $input['parent1_id'] = $pr_res1['id'];
             $input['parent2_id'] = $pr_res2['id'];
             $admission = $model->create($input);
-            $ev_card['admission_id'] = $admission->id;
-            $model->EvaluationCard()->create($ev_card);
+            $ev_card = new EvaluationCard();
+            $ev_card->admission_id = $admission->id;
+            $ev_card->save();
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
