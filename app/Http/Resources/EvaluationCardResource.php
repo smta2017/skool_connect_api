@@ -17,7 +17,7 @@ class EvaluationCardResource extends JsonResource
     {
         return [
             'id' => $this->id,
-//            'student' => $this->Admission->Student,
+            'student' => $this->Admission->Student,
             'exam_date' => $this->exam_date,
             'exam_building_id' => $this->exam_building_id,
             'exam_date2' => $this->exam_date2,
@@ -33,7 +33,6 @@ class EvaluationCardResource extends JsonResource
             'principal_ability' => $this->principal_ability,
             'director_comment' => $this->director_comment,
             'application_status' => $this->application_status,
-            'admission_id' => $this->admission_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

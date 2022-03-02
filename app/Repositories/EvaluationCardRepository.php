@@ -32,8 +32,7 @@ class EvaluationCardRepository extends BaseRepository
         'principal_recommendation',
         'principal_ability',
         'director_comment',
-        'application_status',
-        'admission_id'
+        'application_status'
     ];
 
     /**
@@ -60,7 +59,7 @@ class EvaluationCardRepository extends BaseRepository
         $model = $query->findOrFail($id);
         $model->fill($input);
         $model->save();
-        $admission = Admission::findOrFail($model->admission_id);
+        $admission = Admission::where('evaluation_card_id',$model->id)->first();
         if(!empty($input['application_status'])){
             if($input['application_status']=='Waiting List'){
                 $admission->admission_status_id = 5;

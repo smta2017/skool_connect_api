@@ -31,7 +31,6 @@ class CreateEvaluationCardsTable extends Migration
             $table->enum('principal_ability',['Low','Medium','High'])->nullable();
             $table->text('director_comment')->nullable();
             $table->enum('application_status',['Waiting List','Accepted','Rejected'])->nullable();
-            $table->integer('admission_id');
             $table->timestamps();
             $table->softDeletes();
         });

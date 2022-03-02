@@ -53,10 +53,10 @@ class AdmissionRepository extends BaseRepository
             $input['student_id'] = $st_res['id'];
             $input['parent1_id'] = $pr_res1['id'];
             $input['parent2_id'] = $pr_res2['id'];
-            $admission = $model->create($input);
             $ev_card = new EvaluationCard();
-            $ev_card->admission_id = $admission->id;
             $ev_card->save();
+            $input['evaluation_card_id'] = $ev_card->id;
+            $admission = $model->create($input);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();

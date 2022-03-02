@@ -3664,6 +3664,11 @@
                     "description": "admission_status_id",
                     "type": "integer",
                     "format": "int32"
+                },
+                "evaluation_card_id": {
+                    "description": "evaluation_card_id",
+                    "type": "integer",
+                    "format": "int32"
                 }
             }
         },
@@ -3868,11 +3873,6 @@
                         "Accepted",
                         "Rejected"
                     ]
-                },
-                "admission_id": {
-                    "description": "admission_id",
-                    "type": "integer",
-                    "format": "int32"
                 },
                 "created_at": {
                     "description": "created_at",

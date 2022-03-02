@@ -97,12 +97,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *         enum={"Waiting List","Accepted","Rejected"},
  *      ),
  *      @SWG\Property(
- *          property="admission_id",
- *          description="admission_id",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
  *          property="created_at",
  *          description="created_at",
  *          type="string",
@@ -168,8 +162,7 @@ class EvaluationCard extends Model
         'principal_recommendation' => 'string',
         'principal_ability' => 'string',
         'director_comment' => 'string',
-        'application_status' => 'string',
-        'admission_id' => 'integer'
+        'application_status' => 'string'
     ];
 
     /**
@@ -186,7 +179,7 @@ class EvaluationCard extends Model
     }
 
     public function Admission(){
-        return $this->belongsTo(Admission::class);
+        return $this->hasOne(Admission::class);
     }
 
 

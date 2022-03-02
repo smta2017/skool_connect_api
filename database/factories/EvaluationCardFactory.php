@@ -39,7 +39,6 @@ class EvaluationCardFactory extends Factory
         'principal_ability' => $this->faker->randomElement(['Low','Medium','High']),
         'director_comment' => $this->faker->text,
         'application_status' => $this->faker->randomElement(['Waiting List','Accepted','Rejected']),
-        'admission_id' => $this->faker->unique()->numberBetween(1,20),
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

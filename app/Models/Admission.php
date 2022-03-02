@@ -117,6 +117,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          type="integer",
  *          format="int32"
  *      ),
+ *     *      @SWG\Property(
+ *          property="evaluation_card_id",
+ *          description="evaluation_card_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
  *
  * )
  */
@@ -137,7 +143,8 @@ class Admission extends Model
         'student_id',
         'parent1_id',
         'parent2_id',
-        'admission_status_id'
+        'admission_status_id',
+        'evaluation_card_id'
     ];
 
     /**
@@ -149,7 +156,8 @@ class Admission extends Model
         'student_id' => 'integer',
         'parent1_id' => 'integer',
         'parent2_id' => 'integer',
-        'admission_status_id' => 'integer'
+        'admission_status_id' => 'integer',
+        'evaluation_card_id' => 'integer'
     ];
 
     /**
@@ -161,7 +169,8 @@ class Admission extends Model
         'student_id' => '',
         'parent1_id' => '',
         'parent2_id' => '',
-        'admission_status_id' => ''
+        'admission_status_id' => '',
+        'evaluation_card_id' => ''
     ];
 
     public function Student(){
@@ -181,7 +190,7 @@ class Admission extends Model
     }
 
     public function EvaluationCard(){
-        return $this->hasOne(EvaluationCard::class,'admission_id');
+        return $this->belongsTo(EvaluationCard::class);
     }
 
 }
