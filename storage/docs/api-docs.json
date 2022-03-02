@@ -1200,6 +1200,205 @@
                 }
             }
         },
+        "/evaluationCards": {
+            "get": {
+                "tags": [
+                    "EvaluationCard"
+                ],
+                "summary": "Get a listing of the EvaluationCards.",
+                "description": "Get all EvaluationCards",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/EvaluationCard"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "EvaluationCard"
+                ],
+                "summary": "Store a newly created EvaluationCard in storage",
+                "description": "Store EvaluationCard",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "EvaluationCard that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/EvaluationCard"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/EvaluationCard"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/evaluationCards/{id}": {
+            "get": {
+                "tags": [
+                    "EvaluationCard"
+                ],
+                "summary": "Display the specified EvaluationCard",
+                "description": "Get EvaluationCard",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of EvaluationCard",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/EvaluationCard"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "EvaluationCard"
+                ],
+                "summary": "Update the specified EvaluationCard in storage",
+                "description": "Update EvaluationCard",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of EvaluationCard",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "EvaluationCard that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/EvaluationCard"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/EvaluationCard"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "EvaluationCard"
+                ],
+                "summary": "Remove the specified EvaluationCard from storage",
+                "description": "Delete EvaluationCard",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of EvaluationCard",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/genders": {
             "get": {
                 "tags": [
@@ -2593,6 +2792,205 @@
                 }
             }
         },
+        "/schoolBuildings": {
+            "get": {
+                "tags": [
+                    "SchoolBuilding"
+                ],
+                "summary": "Get a listing of the SchoolBuildings.",
+                "description": "Get all SchoolBuildings",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/SchoolBuilding"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "SchoolBuilding"
+                ],
+                "summary": "Store a newly created SchoolBuilding in storage",
+                "description": "Store SchoolBuilding",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "SchoolBuilding that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/SchoolBuilding"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/SchoolBuilding"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/schoolBuildings/{id}": {
+            "get": {
+                "tags": [
+                    "SchoolBuilding"
+                ],
+                "summary": "Display the specified SchoolBuilding",
+                "description": "Get SchoolBuilding",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of SchoolBuilding",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/SchoolBuilding"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "SchoolBuilding"
+                ],
+                "summary": "Update the specified SchoolBuilding in storage",
+                "description": "Update SchoolBuilding",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of SchoolBuilding",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "SchoolBuilding that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/SchoolBuilding"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/SchoolBuilding"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "SchoolBuilding"
+                ],
+                "summary": "Remove the specified SchoolBuilding from storage",
+                "description": "Delete SchoolBuilding",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of SchoolBuilding",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/students": {
             "get": {
                 "tags": [
@@ -3375,6 +3773,114 @@
                 }
             }
         },
+        "EvaluationCard": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "exam_date": {
+                    "description": "exam_date",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "exam_building_id": {
+                    "description": "exam_building_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "exam_date2": {
+                    "description": "exam_date2",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "exam_building2_id": {
+                    "description": "exam_building2_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "meeting_date": {
+                    "description": "meeting_date",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "meeting_building_id": {
+                    "description": "meeting_building_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "reg_notes": {
+                    "description": "reg_notes",
+                    "type": "string"
+                },
+                "entrance_ability": {
+                    "description": "entrance_ability",
+                    "type": "string",
+                    "enum": [
+                        "A1",
+                        "a2"
+                    ]
+                },
+                "entrance_recommendation": {
+                    "description": "entrance_recommendation",
+                    "type": "string",
+                    "enum": [
+                        "R1",
+                        "R2"
+                    ]
+                },
+                "observation_comment": {
+                    "description": "observation_comment",
+                    "type": "string"
+                },
+                "principal_note": {
+                    "description": "principal_note",
+                    "type": "string"
+                },
+                "principal_recommendation": {
+                    "description": "principal_recommendation",
+                    "type": "string",
+                    "enum": [
+                        "Yes",
+                        "Yes With Condition",
+                        "Re-assess",
+                        "No",
+                        "More Info Needed"
+                    ]
+                },
+                "principal_ability": {
+                    "description": "principal_ability",
+                    "type": "string",
+                    "enum": [
+                        "Low",
+                        "Medium",
+                        "High"
+                    ]
+                },
+                "director_comment": {
+                    "description": "director_comment",
+                    "type": "string"
+                },
+                "application_status": {
+                    "description": "application_status",
+                    "type": "string"
+                },
+                "admission_id": {
+                    "description": "admission_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
         "Gender": {
             "required": [
                 "name"
@@ -3485,6 +3991,27 @@
             }
         },
         "Religion": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "SchoolBuilding": {
             "required": [
                 "name"
             ],

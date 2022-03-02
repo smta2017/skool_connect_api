@@ -42,7 +42,7 @@ class AdmissionRepository extends BaseRepository
 
     public function create($input)
     {
-        $model = null;
+        $admission = null;
         DB::beginTransaction();
         try {
             $model = new Admission();
@@ -52,12 +52,15 @@ class AdmissionRepository extends BaseRepository
             $input['student_id'] = $st_res['id'];
             $input['parent1_id'] = $pr_res1['id'];
             $input['parent2_id'] = $pr_res2['id'];
-            $model->create($input);
+            $admission = $model->create($input);
+            $ev_card['admission_id'] = $admission->id;
+            $model->EvaluationCard()->create($ev_card);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
+            return $e->getMessage();
         }
-        return $model;
+        return $admission;
     }
 
 }

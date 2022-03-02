@@ -65,7 +65,7 @@ class SchoolBuilding extends Model
     ];
 
     public function SchoolBuilding(){
-        return $this->hasOne(EvaluationCard::class);
+        return $this->hasMany(EvaluationCard::class);
     }
 
 

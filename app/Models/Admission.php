@@ -117,7 +117,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          type="integer",
  *          format="int32"
  *      ),
- *   
+ *
  * )
  */
 class Admission extends Model
@@ -158,10 +158,10 @@ class Admission extends Model
      * @var array
      */
     public static $rules = [
-        'student_id' => 'required',
-        'parent1_id' => 'required',
-        'parent2_id' => 'required',
-        'admission_status_id' => 'required'
+        'student_id' => '',
+        'parent1_id' => '',
+        'parent2_id' => '',
+        'admission_status_id' => ''
     ];
 
     public function Student(){
@@ -180,5 +180,8 @@ class Admission extends Model
         return $this->belongsTo(AdmissionStatus::class);
     }
 
+    public function EvaluationCard(){
+        return $this->hasOne(EvaluationCard::class,'admission_id');
+    }
 
 }

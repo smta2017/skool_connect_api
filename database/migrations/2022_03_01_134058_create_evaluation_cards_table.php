@@ -16,21 +16,21 @@ class CreateEvaluationCardsTable extends Migration
     {
         Schema::create('evaluation_cards', function (Blueprint $table) {
             $table->id('id');
-            $table->datetime('exam_date');
-            $table->integer('exam_building_id');
-            $table->datetime('exam_date2');
-            $table->integer('exam_building2_id');
-            $table->datetime('meeting_date');
-            $table->integer('meeting_building_id');
-            $table->text('reg_notes');
-            $table->enum('entrance_ability',['A1','A2']);
-            $table->enum('entrance_recommendation',['R1','R2']);
-            $table->text('observation_comment');
-            $table->text('principal_note');
-            $table->enum('principal_recommendation',['Yes','Yes With Condition','Re-assess','No','More Info Needed']);
-            $table->enum('principal_ability',['Low','Medium','High']);
-            $table->text('director_comment');
-            $table->enum('application_status',['Waiting List','Accepted','Rejected']);
+            $table->datetime('exam_date')->nullable();
+            $table->integer('exam_building_id')->nullable();
+            $table->datetime('exam_date2')->nullable();
+            $table->integer('exam_building2_id')->nullable();
+            $table->datetime('meeting_date')->nullable();
+            $table->integer('meeting_building_id')->nullable();
+            $table->text('reg_notes')->nullable();
+            $table->enum('entrance_ability',['A1','A2'])->nullable();
+            $table->enum('entrance_recommendation',['R1','R2'])->nullable();
+            $table->text('observation_comment')->nullable();
+            $table->text('principal_note')->nullable();
+            $table->enum('principal_recommendation',['Yes','Yes With Condition','Re-assess','No','More Info Needed'])->nullable();
+            $table->enum('principal_ability',['Low','Medium','High'])->nullable();
+            $table->text('director_comment')->nullable();
+            $table->enum('application_status',['Waiting List','Accepted','Rejected'])->nullable();
             $table->integer('admission_id');
             $table->timestamps();
             $table->softDeletes();

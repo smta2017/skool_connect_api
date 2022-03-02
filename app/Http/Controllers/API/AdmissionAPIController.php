@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Requests\API\CreateAdmissionAPIRequest;
+use App\Http\Requests\API\CreateParentAPIRequest;
+use App\Http\Requests\API\CreateStudentAPIRequest;
 use App\Http\Requests\API\UpdateAdmissionAPIRequest;
 use App\Models\Admission;
 use App\Repositories\AdmissionRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Resources\AdmissionResource;
+use Illuminate\Support\Facades\Validator;
 use Response;
 
 /**
@@ -110,9 +113,28 @@ class AdmissionAPIController extends AppBaseController
     public function store(CreateAdmissionAPIRequest $request)
     {
         $input = $request->all();
-
+        $input['admission_status_id'] = 1;
+        $stdR = new CreateStudentAPIRequest();
+        $stpR = new CreateParentAPIRequest();
+        $stdV = Validator::make($input['student'],$stdR->rules());
+        if ($stdV->fails()) {
+            $errors['student'] = $stdV->errors();
+        }
+        $stp1V = Validator::make($input['parent1'],$stpR->rules());
+        if ($stp1V->fails()) {
+            $errors['parent1'] = $stp1V->errors();
+        }
+        $stp2V = Validator::make($input['parent2'],$stpR->rules());
+        if ($stp2V->fails()) {
+            $errors['parent2'] = $stp2V->errors();
+        }
+        if(!empty($errors)){
+            return $this->sendError($errors, 422);
+        }
         $admission = $this->admissionRepository->create($input);
-
+        if(is_string($admission)){
+            return $this->sendError($admission, 422);
+        }
         return $this->sendResponse(new AdmissionResource($admission), 'Admission saved successfully');
     }
 

@@ -54,12 +54,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *      @SWG\Property(
  *          property="entrance_ability",
  *          description="entrance_ability",
- *          type="string"
+ *          type="string",
+ *          enum={"A1","a2"},
  *      ),
  *      @SWG\Property(
  *          property="entrance_recommendation",
  *          description="entrance_recommendation",
- *          type="string"
+ *          type="string",
+ *          enum={"R1","R2"},
  *      ),
  *      @SWG\Property(
  *          property="observation_comment",
@@ -74,12 +76,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *      @SWG\Property(
  *          property="principal_recommendation",
  *          description="principal_recommendation",
- *          type="string"
+ *         type="string",
+ *          enum={"Yes","Yes With Condition","Re-assess","No","More Info Needed"},
  *      ),
  *      @SWG\Property(
  *          property="principal_ability",
  *          description="principal_ability",
- *          type="string"
+ *             type="string",
+ *          enum={"Low","Medium","High"},
  *      ),
  *      @SWG\Property(
  *          property="director_comment",
