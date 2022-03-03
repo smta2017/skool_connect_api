@@ -18,10 +18,10 @@ class EvaluationCardResource extends JsonResource
         return [
             'id' => $this->id,
 //            'student' => $this->Admission->Student,
-            'exam_date' => date('Y m d',strtotime($this->exam_date)),
+            'exam_date' => date('Y-m-d',strtotime($this->exam_date)),
             'exam_building_id' => $this->exam_building_id,
-            'exam_date2' => date('Y m d',strtotime($this->exam_date2)),
-            'exam_building2_id' => date('Y m d',strtotime($this->exam_building2_id)),
+            'exam_date2' => date('Y-m-d',strtotime($this->exam_date2)),
+            'exam_building2_id' => date('Y-m-d',strtotime($this->exam_building2_id)),
             'meeting_date' => $this->meeting_date,
             'meeting_building_id' => $this->meeting_building_id,
             'reg_notes' => $this->reg_notes,
