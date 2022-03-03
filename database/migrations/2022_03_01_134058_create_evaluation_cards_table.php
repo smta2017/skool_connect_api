@@ -27,10 +27,10 @@ class CreateEvaluationCardsTable extends Migration
             $table->enum('entrance_recommendation',['R1','R2'])->nullable();
             $table->text('observation_comment')->nullable();
             $table->text('principal_note')->nullable();
-            $table->enum('principal_recommendation',['Yes','Yes With Condition','Re-assess','No','More Info Needed'])->nullable();
+            $table->enum('principal_recommendation',['Yes','Yes_With_Condition','Re_assess','No','More_Info_Needed'])->nullable();
             $table->enum('principal_ability',['Low','Medium','High'])->nullable();
             $table->text('director_comment')->nullable();
-            $table->enum('application_status',['Waiting List','Accepted','Rejected'])->nullable();
+            $table->enum('application_status',['Waiting_List','Accepted','Rejected'])->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

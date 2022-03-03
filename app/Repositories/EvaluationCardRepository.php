@@ -72,7 +72,7 @@ class EvaluationCardRepository extends BaseRepository
             $admission->admission_status_id = 4;
         }elseif(!empty($input['exam_date2'])){
             $admission->admission_status_id = 3;
-        }elseif(!empty($input['exam_date1'])){
+        }elseif(!empty($input['exam_date'])){
             $admission->admission_status_id = 2;
         }
         $admission->save();

@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
         $AS = new \App\Models\AdmissionStatus();
         $AS->truncate();
         $AS->insert(['name' => 'New']);
-        $AS->insert(['name' => 'To Assess']);
-        $AS->create(['name' => 'Re-Assess']);
-        $AS->create(['name' => 'To Interview']);
-        $AS->create(['name' => 'Waiting List']);
+        $AS->insert(['name' => 'To_Assess']);
+        $AS->create(['name' => 'Re_Assess']);
+        $AS->create(['name' => 'To_Interview']);
+        $AS->create(['name' => 'Waiting_List']);
         $AS->create(['name' => 'Accepted']);
         $AS->create(['name' => 'Rejected']);
         \App\Models\User::factory(config("app.seeder_count",10))->create();

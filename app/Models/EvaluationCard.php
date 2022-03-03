@@ -77,7 +77,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          property="principal_recommendation",
  *          description="principal_recommendation",
  *         type="string",
- *          enum={"Yes","Yes With Condition","Re-assess","No","More Info Needed"},
+ *          enum={"Yes","Yes_With_Condition","Re_assess","No","More_Info_Needed"},
  *      ),
  *      @SWG\Property(
  *          property="principal_ability",
@@ -94,7 +94,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          property="application_status",
  *          description="application_status",
  *          type="string",
- *         enum={"Waiting List","Accepted","Rejected"},
+ *         enum={"Waiting_List","Accepted","Rejected"},
  *      ),
  *      @SWG\Property(
  *          property="created_at",

@@ -35,10 +35,10 @@ class EvaluationCardFactory extends Factory
         'entrance_recommendation' => $this->faker->randomElement(['R1', 'R2']),
         'observation_comment' => $this->faker->text,
         'principal_note' => $this->faker->text,
-        'principal_recommendation' => $this->faker->randomElement(['Yes','Yes With Condition','Re-assess','No','More Info Needed']),
+        'principal_recommendation' => $this->faker->randomElement(['Yes','Yes_With_Condition','Re_assess','No','More_Info_Needed']),
         'principal_ability' => $this->faker->randomElement(['Low','Medium','High']),
         'director_comment' => $this->faker->text,
-        'application_status' => $this->faker->randomElement(['Waiting List','Accepted','Rejected']),
+        'application_status' => $this->faker->randomElement(['Waiting_List','Accepted','Rejected']),
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];
