@@ -61,7 +61,7 @@ class EvaluationCardRepository extends BaseRepository
         $model->save();
         $admission = Admission::where('evaluation_card_id',$model->id)->first();
         if(!empty($input['application_status'])){
-            if($input['application_status']=='Waiting List'){
+            if($input['application_status']=='Waiting_List'){
                 $admission->admission_status_id = 5;
             }elseif($input['application_status']=='Accepted'){
                 $admission->admission_status_id = 6;
