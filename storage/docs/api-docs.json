@@ -3190,6 +3190,205 @@
                 }
             }
         },
+        "/studentStatuses": {
+            "get": {
+                "tags": [
+                    "StudentStatus"
+                ],
+                "summary": "Get a listing of the StudentStatuses.",
+                "description": "Get all StudentStatuses",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/StudentStatus"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "StudentStatus"
+                ],
+                "summary": "Store a newly created StudentStatus in storage",
+                "description": "Store StudentStatus",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentStatus that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentStatus"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/studentStatuses/{id}": {
+            "get": {
+                "tags": [
+                    "StudentStatus"
+                ],
+                "summary": "Display the specified StudentStatus",
+                "description": "Get StudentStatus",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentStatus",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentStatus"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "StudentStatus"
+                ],
+                "summary": "Update the specified StudentStatus in storage",
+                "description": "Update StudentStatus",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentStatus",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentStatus that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentStatus"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StudentStatus"
+                ],
+                "summary": "Remove the specified StudentStatus from storage",
+                "description": "Delete StudentStatus",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentStatus",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/userTypes": {
             "get": {
                 "tags": [
@@ -3513,6 +3712,9 @@
                             },
                             "staff_no": {
                                 "type": "string"
+                            },
+                            "student_status_id": {
+                                "type": "integer"
                             },
                             "learn_support": {
                                 "type": "string"
@@ -4208,6 +4410,7 @@
                 "transfer_from_cairo",
                 "staff_child",
                 "staff_no",
+                "student_status_id",
                 "learn_support",
                 "learn_support_details"
             ],
@@ -4398,12 +4601,37 @@
                     "description": "staff_no",
                     "type": "string"
                 },
+                "student_status_id": {
+                    "description": "student_status_id",
+                    "type": "integer"
+                },
                 "learn_support": {
                     "description": "learn_support",
                     "type": "boolean"
                 },
                 "learn_support_details": {
                     "description": "learn_support_details",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "StudentStatus": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "description": "name",
                     "type": "string"
                 },
                 "created_at": {

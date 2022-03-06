@@ -53,6 +53,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
                     @SWG\Property(property="transfer_from_cairo", type="string"),
                     @SWG\Property(property="staff_child", type="string"),
                     @SWG\Property(property="staff_no", type="string"),
+                    @SWG\Property(property="student_status_id", type="integer"),
                     @SWG\Property(property="learn_support", type="string"),
                     @SWG\Property(property="learn_support_details", type="string"),
                     @SWG\Property(property="photo", type="string"),

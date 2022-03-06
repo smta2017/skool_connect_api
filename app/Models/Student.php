@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * @SWG\Definition(
  *      definition="Student",
- *      required={"first_name_en", "middle_name_en", "last_name_en", "first_name_ar", "middle_name_ar", "last_name_ar", "division_id", "grade_id", "class_id", "passport_no", "birth_date", "birth_place", "october_age_date", "academic_year_applying_id", "nationality_id", "gender_id", "bus_id", "religion_id", "previous_school_nursery", "address", "city", "email", "mobile", "submit_date", "photo", "code", "lang_id", "birth_certificate", "academic_house", "report_cards", "referance_letter", "referance_name", "referance_email", "referance_phone", "enroll_date", "custody", "foreigner", "egy_returning", "transfer_from_cairo", "staff_child", "staff_no", "learn_support", "learn_support_details"},
+ *      required={"first_name_en", "middle_name_en", "last_name_en", "first_name_ar", "middle_name_ar", "last_name_ar", "division_id", "grade_id", "class_id", "passport_no", "birth_date", "birth_place", "october_age_date", "academic_year_applying_id", "nationality_id", "gender_id", "bus_id", "religion_id", "previous_school_nursery", "address", "city", "email", "mobile", "submit_date", "photo", "code", "lang_id", "birth_certificate", "academic_house", "report_cards", "referance_letter", "referance_name", "referance_email", "referance_phone", "enroll_date", "custody", "foreigner", "egy_returning", "transfer_from_cairo", "staff_child", "staff_no", "student_status_id", "learn_support", "learn_support_details"},
  *      @SWG\Property(
  *          property="first_name_en",
  *          description="first_name_en",
@@ -240,6 +240,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="student_status_id",
+ *          description="student_status_id",
+ *          type="integer"
+ *      ),
+ *      @SWG\Property(
  *          property="learn_support",
  *          description="learn_support",
  *          type="boolean"
@@ -320,6 +325,7 @@ class Student extends Model
         'transfer_from_cairo',
         'staff_child',
         'staff_no',
+        'student_status_id',
         'learn_support',
         'learn_support_details'
     ];
@@ -373,6 +379,7 @@ class Student extends Model
         'transfer_from_cairo' => 'boolean',
         'staff_child' => 'boolean',
         'staff_no' => 'string',
+        'student_status_id' => 'string',
         'learn_support' => 'boolean',
         'learn_support_details' => 'string'
     ];
@@ -426,6 +433,7 @@ class Student extends Model
         'transfer_from_cairo' => 'required',
         'staff_child' => 'required',
         'staff_no' => 'required',
+        'student_status_id' => 'required',
         'learn_support' => 'required',
         'learn_support_details' => 'required'
     ];

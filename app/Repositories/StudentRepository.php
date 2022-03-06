@@ -60,6 +60,7 @@ class StudentRepository extends BaseRepository
         'transfer_from_cairo',
         'staff_child',
         'staff_no',
+        'student_status_id',
         'learn_support',
         'learn_support_details'
     ];

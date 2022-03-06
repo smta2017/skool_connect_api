@@ -73,6 +73,7 @@ class StudentFactory extends Factory
             'transfer_from_cairo' => $this->faker->randomElement(['0', '1']),
             'staff_child' => $this->faker->randomElement(['0', '1']),
             'staff_no' => $this->faker->word,
+            'student_status_id' => 0,
             'learn_support' => $this->faker->randomElement(['0', '1']),
             'learn_support_details' => $this->faker->word,
             'created_at' => $this->faker->date('Y-m-d H:i:s'),

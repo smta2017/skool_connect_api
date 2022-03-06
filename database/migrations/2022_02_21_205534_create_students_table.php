@@ -59,6 +59,7 @@ class CreateStudentsTable extends Migration
             $table->boolean('transfer_from_cairo');
             $table->boolean('staff_child');
             $table->string('staff_no');
+            $table->integer('student_status_id')->default(0);
             $table->boolean('learn_support');
             $table->string('learn_support_details');
             $table->timestamps();

@@ -106,6 +106,8 @@ use Illuminate\Support\Facades\Route;
         Route::resource('evaluationCards', App\Http\Controllers\API\EvaluationCardAPIController::class);
         Route::resource('schoolBuildings', App\Http\Controllers\API\SchoolBuildingAPIController::class);
 
+        Route::resource('studentStatuses', App\Http\Controllers\API\StudentStatusAPIController::class);
+
         Route::post('change_admission_status/{id}', [App\Http\Controllers\API\AdmissionAPIController::class,'change_status']);
 
     });

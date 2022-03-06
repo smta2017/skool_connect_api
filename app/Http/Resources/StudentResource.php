@@ -58,6 +58,7 @@ class StudentResource extends JsonResource
             'transfer_from_cairo' => $this->transfer_from_cairo,
             'staff_child' => $this->staff_child,
             'staff_no' => $this->staff_no,
+            'student_status_id' => $this->student_status_id,
             'learn_support' => $this->learn_support,
             'learn_support_details' => $this->learn_support_details,
             'created_at' => $this->created_at,
