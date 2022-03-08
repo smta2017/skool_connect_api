@@ -108,7 +108,23 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('studentStatuses', App\Http\Controllers\API\StudentStatusAPIController::class);
 
-        Route::post('change_admission_status/{id}', [App\Http\Controllers\API\AdmissionAPIController::class,'change_status']);
+        Route::resource('studentSiblings', App\Http\Controllers\API\StudentSiblingAPIController::class);
+
+        Route::resource('emergencyContacts', App\Http\Controllers\API\EmergencyContactAPIController::class);
+
+        Route::resource('studentStepParents', App\Http\Controllers\API\StudentStepParentAPIController::class);
+
+        Route::resource('studentHealthIssues', App\Http\Controllers\API\StudentHealthIssueAPIController::class);
+
+        Route::resource('studentParents', App\Http\Controllers\API\StudentParentAPIController::class);
+
+        Route::resource('studentDetails', App\Http\Controllers\API\StudentDetailAPIController::class);
+
+        Route::resource('studentPreviousSchools', App\Http\Controllers\API\StudentPreviousSchoolAPIController::class);
+
+        Route::post('changeAdmissionStatus/{id}', [App\Http\Controllers\API\AdmissionAPIController::class,'change_status']);
 
     });
 // });
+
+

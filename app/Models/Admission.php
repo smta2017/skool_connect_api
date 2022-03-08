@@ -46,7 +46,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
                     @SWG\Property(property="referance_name", type="string"),
                     @SWG\Property(property="referance_email", type="string"),
                     @SWG\Property(property="referance_phone", type="string"),
-                    @SWG\Property(property="enroll_date", type="string"),
                     @SWG\Property(property="custody", type="string"),
                     @SWG\Property(property="foreigner", type="string"),
                     @SWG\Property(property="egy_returning", type="string"),
@@ -59,7 +58,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
                     @SWG\Property(property="photo", type="string"),
                     @SWG\Property(property="code", type="string"),
                     @SWG\Property(property="national_no", type="string"),
-                    @SWG\Property(property="submit_date", type="string"),
     ),
  *      ),
  *      @SWG\Property(
@@ -142,8 +140,6 @@ class Admission extends Model
 
     public $fillable = [
         'student_id',
-        'parent1_id',
-        'parent2_id',
         'admission_status_id',
         'evaluation_card_id'
     ];
@@ -155,8 +151,6 @@ class Admission extends Model
      */
     protected $casts = [
         'student_id' => 'integer',
-        'parent1_id' => 'integer',
-        'parent2_id' => 'integer',
         'admission_status_id' => 'integer',
         'evaluation_card_id' => 'integer'
     ];
@@ -168,22 +162,12 @@ class Admission extends Model
      */
     public static $rules = [
         'student_id' => '',
-        'parent1_id' => '',
-        'parent2_id' => '',
         'admission_status_id' => '',
         'evaluation_card_id' => ''
     ];
 
     public function Student(){
         return $this->belongsTo(Student::class);
-    }
-
-    public function Parent1(){
-        return $this->belongsTo(StParent::class,'parent1_id');
-    }
-
-    public function Parent2(){
-        return $this->belongsTo(StParent::class,'parent2_id');
     }
 
     public function AdmissionStatus(){

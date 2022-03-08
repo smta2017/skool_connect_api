@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * @SWG\Definition(
  *      definition="Student",
- *      required={"first_name_en", "middle_name_en", "last_name_en", "first_name_ar", "middle_name_ar", "last_name_ar", "division_id", "grade_id", "class_id", "passport_no", "birth_date", "birth_place", "october_age_date", "academic_year_applying_id", "nationality_id", "gender_id", "bus_id", "religion_id", "previous_school_nursery", "address", "city", "email", "mobile", "submit_date", "photo", "code", "lang_id", "birth_certificate", "academic_house", "report_cards", "referance_letter", "referance_name", "referance_email", "referance_phone", "enroll_date", "custody", "foreigner", "egy_returning", "transfer_from_cairo", "staff_child", "staff_no", "student_status_id", "learn_support", "learn_support_details"},
+ *      required={"first_name_en", "middle_name_en", "last_name_en", "first_name_ar", "middle_name_ar", "last_name_ar", "division_id", "grade_id", "class_id", "passport_no", "birth_date", "birth_place", "october_age_date", "academic_year_applying_id", "nationality_id", "gender_id", "bus_id", "religion_id", "previous_school_nursery", "address", "city", "email", "mobile", "photo", "code", "lang_id", "birth_certificate", "academic_house", "report_cards", "referance_letter", "referance_name", "referance_email", "referance_phone", "custody", "foreigner", "egy_returning", "transfer_from_cairo", "staff_child", "staff_no", "student_status_id", "learn_support", "learn_support_details"},
  *      @SWG\Property(
  *          property="first_name_en",
  *          description="first_name_en",
@@ -141,12 +142,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="submit_date",
- *          description="submit_date",
- *          type="string",
- *          format="date"
- *      ),
- *      @SWG\Property(
  *          property="photo",
  *          description="photo",
  *          type="string"
@@ -202,12 +197,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          property="referance_phone",
  *          description="referance_phone",
  *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="enroll_date",
- *          description="enroll_date",
- *          type="string",
- *          format="date"
  *      ),
  *      @SWG\Property(
  *          property="custody",
@@ -306,7 +295,6 @@ class Student extends Model
         'city',
         'email',
         'mobile',
-        'submit_date',
         'photo',
         'code',
         'lang_id',
@@ -360,7 +348,6 @@ class Student extends Model
         'city' => 'string',
         'email' => 'string',
         'mobile' => 'string',
-        'submit_date' => 'date',
         'photo' => 'string',
         'code' => 'string',
         'lang_id' => 'integer',
@@ -372,7 +359,6 @@ class Student extends Model
         'referance_name' => 'string',
         'referance_email' => 'string',
         'referance_phone' => 'string',
-        'enroll_date' => 'date',
         'custody' => 'string',
         'foreigner' => 'boolean',
         'egy_returning' => 'boolean',
@@ -403,7 +389,7 @@ class Student extends Model
         'passport_no' => 'required',
         'birth_date' => 'required',
         'birth_place' => 'required',
-        'october_age_date' => 'required',
+        'october_age_date' => '',
         'academic_year_applying_id' => 'required',
         'nationality_id' => 'required',
         'gender_id' => 'required',
@@ -414,7 +400,6 @@ class Student extends Model
         'city' => 'required',
         'email' => 'required',
         'mobile' => 'required',
-        'submit_date' => 'required',
         'photo' => 'required',
         'code' => 'required',
         'lang_id' => 'required',
@@ -475,5 +460,41 @@ class Student extends Model
     }
 
 
+    public function setOctoberAgeDateAttribute($value) {
+        $to = Carbon::createFromFormat('Y-m-d', \date('Y-m-d',strtotime($this->attributes['birth_date'])));
+        $from = Carbon::createFromFormat('Y-m-d', date('Y').'-10-1');
+
+        $diff = $to->diff($from);
+        $this->attributes['october_age_date'] = $diff->y.' Years '.$diff->m.' Months '.$diff->d.' Days';
+    }
+
+
+    public function EmergencyContact(){
+        return $this->hasMany(EmergencyContact::class);
+    }
+
+    public function StudentSibling(){
+        return $this->hasMany(StudentSibling::class);
+    }
+
+    public function StudentHealthIssue(){
+        return $this->hasMany(StudentHealthIssue::class);
+    }
+
+    public function StudentStepParent(){
+        return $this->hasMany(StudentStepParent::class);
+    }
+
+    public function StudentDetail(){
+        return $this->hasOne(StudentDetail::class);
+    }
+
+    public function StudentParent(){
+        return $this->hasMany(StudentParent::class);
+    }
+
+    public function StudentPreviousSchool(){
+        return $this->hasMany(StudentPreviousSchool::class);
+    }
 
 }

@@ -2,21 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Admission;
-use App\Models\AdmissionStatus;
-use App\Models\EvaluationCard;
-use App\Models\StParent;
-use App\Models\Student;
+use App\Models\StudentDetail;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AdmissionFactory extends Factory
+class StudentDetailFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Admission::class;
+    protected $model = StudentDetail::class;
 
     /**
      * Define the model's default state.
@@ -26,9 +22,10 @@ class AdmissionFactory extends Factory
     public function definition()
     {
         return [
-            'student_id' => Student::pluck('id')->random(),
-        'admission_status_id' => AdmissionStatus::pluck('id')->random(),
-        'evaluation_card_id' => $this->faker->unique()->numberBetween(1,20),
+            'student_id' => $this->faker->randomDigitNotNull,
+        'marital_status_id' => $this->faker->randomDigitNotNull,
+        'bus' => $this->faker->word,
+        'custodial_parent_name' => $this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

@@ -13,24 +13,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $AS = new \App\Models\AdmissionStatus();
-        $AS->truncate();
-        $AS->insert(['name' => 'New']);
-        $AS->insert(['name' => 'To_Assess']);
-        $AS->create(['name' => 'Re_Assess']);
-        $AS->create(['name' => 'To_Interview']);
-        $AS->create(['name' => 'Waiting_List']);
-        $AS->create(['name' => 'Accepted']);
-        $AS->create(['name' => 'Rejected']);
-        $Gr = new \App\Models\Gender();
-        $Gr->truncate();
-        $Gr->insert(['name' => 'Male']);
-        $Gr->insert(['name' => 'Female']);
-        $Re = new \App\Models\Religion();
-        $Re->truncate();
-        $Re->insert(['name' => 'Muslim']);
-        $Re->insert(['name' => 'Christian']);
-        $Re->insert(['name' => 'Other']);
+        $AdmissionStatus = new \App\Models\AdmissionStatus();
+        $AdmissionStatus->truncate();
+        $AdmissionStatus->insert(['name' => 'New']);
+        $AdmissionStatus->insert(['name' => 'To_Assess']);
+        $AdmissionStatus->create(['name' => 'Re_Assess']);
+        $AdmissionStatus->create(['name' => 'To_Interview']);
+        $AdmissionStatus->create(['name' => 'Waiting_List']);
+        $AdmissionStatus->create(['name' => 'Accepted']);
+        $AdmissionStatus->create(['name' => 'Rejected']);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $Gender = new \App\Models\Gender();
+        $Gender->truncate();
+        $Gender->insert(['name' => 'Male']);
+        $Gender->insert(['name' => 'Female']);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $Religion = new \App\Models\Religion();
+        $Religion->truncate();
+        $Religion->insert(['name' => 'Muslim']);
+        $Religion->insert(['name' => 'Christian']);
+        $Religion->insert(['name' => 'Other']);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $MaritalStatus = new \App\Models\MaritalStatus();
+        $MaritalStatus->truncate();
+        $MaritalStatus->insert(['name' => 'Married']);
+        $MaritalStatus->insert(['name' => 'Divorced']);
+        $MaritalStatus->insert(['name' => 'Widowed']);
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         \App\Models\User::factory(config("app.seeder_count",10))->create();
         \App\Models\UserType::factory(config("app.seeder_count",10))->create();
         \App\Models\Division::factory(config("app.seeder_count",10))->create();
@@ -41,7 +50,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Bus::factory(config("app.seeder_count",10))->create();
         \App\Models\Language::factory(config("app.seeder_count",10))->create();
         \App\Models\Student::factory(config("app.seeder_count",10))->create();
-        \App\Models\MaritalStatus::factory(config("app.seeder_count",10))->create();
         \App\Models\StParent::factory(config("app.seeder_count",10))->create();
         \App\Models\Admission::factory(config("app.seeder_count",10))->create();
         \App\Models\SchoolBuilding::factory(config("app.seeder_count",10))->create();

@@ -29,7 +29,7 @@ class CreateStudentsTable extends Migration
             $table->string('passport_no');
             $table->date('birth_date');
             $table->string('birth_place');
-            $table->date('october_age_date');
+            $table->string('october_age_date')->nullable();
             $table->integer('academic_year_applying_id');
             $table->integer('nationality_id');
             $table->integer('gender_id');
@@ -40,7 +40,6 @@ class CreateStudentsTable extends Migration
             $table->string('city');
             $table->string('email');
             $table->string('mobile');
-            $table->date('submit_date');
             $table->string('photo');
             $table->string('code');
             $table->integer('lang_id');
@@ -52,7 +51,6 @@ class CreateStudentsTable extends Migration
             $table->string('referance_name');
             $table->string('referance_email');
             $table->string('referance_phone');
-            $table->date('enroll_date');
             $table->string('custody');
             $table->boolean('foreigner');
             $table->boolean('egy_returning');

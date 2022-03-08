@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdmissionsTable extends Migration
+class CreateStudentSiblingsTable extends Migration
 {
 
     /**
@@ -14,11 +14,14 @@ class CreateAdmissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admissions', function (Blueprint $table) {
+        Schema::create('student_siblings', function (Blueprint $table) {
             $table->id('id');
             $table->integer('student_id');
-            $table->integer('admission_status_id');
-            $table->integer('evaluation_card_id');
+            $table->boolean('sibling_in_alsson');
+            $table->string('name');
+            $table->string('current_school');
+            $table->string('age');
+            $table->string('grade');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +34,6 @@ class CreateAdmissionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('admissions');
+        Schema::drop('student_siblings');
     }
 }

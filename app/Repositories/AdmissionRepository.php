@@ -18,8 +18,6 @@ class AdmissionRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'student_id',
-        'parent1_id',
-        'parent2_id',
         'admission_status_id'
     ];
 
