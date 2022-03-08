@@ -34,6 +34,14 @@ class ParentRepository extends BaseRepository
         'alumni',
         'class_off',
         'type',
+        'religion_id',
+        'nationality_id',
+        'address',
+        'email',
+        'phone',
+        'mobile',
+        'card_id',
+        'card_id_file',
         'school'
     ];
 

@@ -101,6 +101,48 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          description="school",
  *          type="string"
  *      ),
+ *      
+ *
+ *      @SWG\Property(
+ *       property="religion_id" 
+ *      description="religion_id",
+ *          type="string"
+ *      ),
+ *       @SWG\Property(
+ *         property="nationality_id" 
+ *         description="nationality_id",
+ *          type="string"
+ *      ),
+ *       @SWG\Property(
+ *         property="address" 
+ *         description="address",
+ *          type="string"
+ *      ),
+ *       @SWG\Property(
+ *        property="email" 
+ *        description="email",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *        property="phone" 
+ *        description="phone",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *        property="mobile" 
+ *        description="mobile",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *        property="card_id" 
+ *        description="card_id",
+ *          type="string"
+ *      ),
+ *     @SWG\Property(
+ *       property="card_id_file" 
+ *       description="card_id_file",
+ *          type="string"
+ *      ),
  *      @SWG\Property(
  *          property="created_at",
  *          description="created_at",
@@ -146,6 +188,14 @@ class StParent extends Model
         'alumni',
         'class_off',
         'type',
+        'religion_id',
+        'nationality_id',
+        'address',
+        'email',
+        'phone',
+        'mobile',
+        'card_id',
+        'card_id_file',
         'school'
     ];
 
@@ -172,6 +222,14 @@ class StParent extends Model
         'alumni' => 'boolean',
         'class_off' => 'string',
         'type' => 'string',
+        'religion_id'=>'integer',
+        'nationality_id'=>'integer',
+        'address'=>'string',
+        'email'=>'string',
+        'phone'=>'string',
+        'mobile'=>'string',
+        'card_id'=>'string',
+        'card_id_file'=>'string',
         'school' => 'string'
     ];
 
@@ -198,6 +256,14 @@ class StParent extends Model
         'alumni' => 'required',
         'class_off' => 'required',
         'type' => 'required',
+        'religion_id'=>'',
+        'nationality_id'=>'',
+        'address'=>'',
+        'email'=>'',
+        'phone'=>'',
+        'mobile'=>'',
+        'card_id'=>'',
+        'card_id_file'=>'',
         'school' => 'required'
     ];
 

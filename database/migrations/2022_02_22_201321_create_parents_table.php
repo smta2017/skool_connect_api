@@ -34,6 +34,14 @@ class CreateParentsTable extends Migration
             $table->string('class_off');
             $table->string('type');
             $table->string('school');
+            $table->integer('religion_id');
+            $table->integer('nationality_id');
+            $table->string('address');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('mobile');
+            $table->string('card_id' );
+            $table->string('card_id_file');
             $table->timestamps();
             $table->softDeletes();
         });

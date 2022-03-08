@@ -41,6 +41,14 @@ class StParentFactory extends Factory
         'class_off' => $this->faker->word,
         'type' => $this->faker->word,
         'school' => $this->faker->word,
+        'religion_id'=>$this->faker->randomElement(['2', '1']),
+        'nationality_id'=>$this->faker->randomElement(['2', '1']),
+        'address'=>$this->faker->word,
+        'email'=>$this->faker->word,
+        'phone'=>$this->faker->word,
+        'mobile'=>$this->faker->word,
+        'card_id'=>$this->faker->word,
+        'card_id_file'=>$this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];
