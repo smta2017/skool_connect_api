@@ -19,6 +19,7 @@ class AdmissionResource extends JsonResource
             'student' => new StudentResource($this->Student),
             'parent1' => new ParentResource($this->Parent1),
             'parent2' => new ParentResource($this->Parent2),
+            'apply_reason' => $this->apply_reason,
             'evaluation_card' => new EvaluationCardResource($this->EvaluationCard),
             'admission_status' => new AdmissionStatusResource($this->AdmissionStatus),
             'created_at' => $this->created_at,

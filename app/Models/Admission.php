@@ -116,10 +116,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          type="integer",
  *          format="int32"
  *      ),
- *     *      @SWG\Property(
+ *           @SWG\Property(
  *          property="evaluation_card_id",
  *          description="evaluation_card_id",
  *          type="integer",
+ *          format="int32"
+ *      ),
+ *           @SWG\Property(
+ *          property="apply_reason",
+ *          description="apply_reason",
+ *          type="string",
  *          format="int32"
  *      ),
  *
@@ -141,6 +147,7 @@ class Admission extends Model
     public $fillable = [
         'student_id',
         'admission_status_id',
+        'apply_reason',
         'evaluation_card_id'
     ];
 
@@ -152,6 +159,7 @@ class Admission extends Model
     protected $casts = [
         'student_id' => 'integer',
         'admission_status_id' => 'integer',
+        'apply_reason' => 'string',
         'evaluation_card_id' => 'integer'
     ];
 
@@ -162,6 +170,7 @@ class Admission extends Model
      */
     public static $rules = [
         'student_id' => '',
+        'apply_reason' => '',
         'admission_status_id' => '',
         'evaluation_card_id' => ''
     ];

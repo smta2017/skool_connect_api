@@ -29,6 +29,7 @@ class AdmissionFactory extends Factory
             'student_id' => Student::pluck('id')->random(),
         'admission_status_id' => AdmissionStatus::pluck('id')->random(),
         'evaluation_card_id' => $this->faker->unique()->numberBetween(1,20),
+        'apply_reason' => $this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];
