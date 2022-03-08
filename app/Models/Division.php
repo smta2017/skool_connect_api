@@ -36,7 +36,7 @@ class Division extends Model
     use HasFactory;
 
     public $table = 'divisions';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -64,5 +64,8 @@ class Division extends Model
         'name' => 'required'
     ];
 
-    
+    public function Grade(){
+        return $this->hasMany(Grade::class);
+    }
+
 }

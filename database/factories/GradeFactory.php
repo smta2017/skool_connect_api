@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Division;
 use App\Models\Grade;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,6 +24,7 @@ class GradeFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
+            'division_id' => Division::pluck('id')->random(),
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

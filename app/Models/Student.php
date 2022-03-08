@@ -306,7 +306,6 @@ class Student extends Model
         'referance_name',
         'referance_email',
         'referance_phone',
-        'enroll_date',
         'custody',
         'foreigner',
         'egy_returning',

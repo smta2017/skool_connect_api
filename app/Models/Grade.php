@@ -11,6 +11,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *      definition="Grade",
  *      required={"name"},
  *      @SWG\Property(
+ *          property="division_id",
+ *          description="division_id",
+ *          type="integer"
+ *      ),
+ *      @SWG\Property(
  *          property="name",
  *          description="name",
  *          type="string"
@@ -36,13 +41,14 @@ class Grade extends Model
     use HasFactory;
 
     public $table = 'grades';
-    
+
 
     protected $dates = ['deleted_at'];
 
 
 
     public $fillable = [
+        'division_id',
         'name'
     ];
 
@@ -52,6 +58,7 @@ class Grade extends Model
      * @var array
      */
     protected $casts = [
+        'division_id' => 'integer',
         'name' => 'string'
     ];
 
@@ -61,8 +68,13 @@ class Grade extends Model
      * @var array
      */
     public static $rules = [
+        'division_id' => 'required',
         'name' => 'required'
     ];
 
-    
+    public function Division(){
+        return $this->belongsTo(Division::class);
+    }
+
+
 }
