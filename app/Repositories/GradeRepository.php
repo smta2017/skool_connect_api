@@ -17,6 +17,7 @@ class GradeRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'division_id',
         'name'
     ];
 

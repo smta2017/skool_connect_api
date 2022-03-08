@@ -1200,6 +1200,205 @@
                 }
             }
         },
+        "/emergencyContacts": {
+            "get": {
+                "tags": [
+                    "EmergencyContact"
+                ],
+                "summary": "Get a listing of the EmergencyContacts.",
+                "description": "Get all EmergencyContacts",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/EmergencyContact"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "EmergencyContact"
+                ],
+                "summary": "Store a newly created EmergencyContact in storage",
+                "description": "Store EmergencyContact",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "EmergencyContact that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/EmergencyContact"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/EmergencyContact"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/emergencyContacts/{id}": {
+            "get": {
+                "tags": [
+                    "EmergencyContact"
+                ],
+                "summary": "Display the specified EmergencyContact",
+                "description": "Get EmergencyContact",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of EmergencyContact",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/EmergencyContact"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "EmergencyContact"
+                ],
+                "summary": "Update the specified EmergencyContact in storage",
+                "description": "Update EmergencyContact",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of EmergencyContact",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "EmergencyContact that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/EmergencyContact"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/EmergencyContact"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "EmergencyContact"
+                ],
+                "summary": "Remove the specified EmergencyContact from storage",
+                "description": "Delete EmergencyContact",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of EmergencyContact",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/evaluationCards": {
             "get": {
                 "tags": [
@@ -3190,6 +3389,1001 @@
                 }
             }
         },
+        "/StudentDetails": {
+            "get": {
+                "tags": [
+                    "StudentDetail"
+                ],
+                "summary": "Get a listing of the StudentDetails.",
+                "description": "Get all StudentDetails",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/StudentDetail"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "StudentDetail"
+                ],
+                "summary": "Store a newly created StudentDetail in storage",
+                "description": "Store StudentDetail",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentDetail that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentDetail"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentDetail"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/StudentDetails/{id}": {
+            "get": {
+                "tags": [
+                    "StudentDetail"
+                ],
+                "summary": "Display the specified StudentDetail",
+                "description": "Get StudentDetail",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentDetail",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentDetail"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "StudentDetail"
+                ],
+                "summary": "Update the specified StudentDetail in storage",
+                "description": "Update StudentDetail",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentDetail",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentDetail that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentDetail"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentDetail"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StudentDetail"
+                ],
+                "summary": "Remove the specified StudentDetail from storage",
+                "description": "Delete StudentDetail",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentDetail",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/StudentHealthIssues": {
+            "get": {
+                "tags": [
+                    "StudentHealthIssue"
+                ],
+                "summary": "Get a listing of the StudentHealthIssues.",
+                "description": "Get all StudentHealthIssues",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/StudentHealthIssue"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "StudentHealthIssue"
+                ],
+                "summary": "Store a newly created StudentHealthIssue in storage",
+                "description": "Store StudentHealthIssue",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentHealthIssue that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentHealthIssue"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentHealthIssue"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/StudentHealthIssues/{id}": {
+            "get": {
+                "tags": [
+                    "StudentHealthIssue"
+                ],
+                "summary": "Display the specified StudentHealthIssue",
+                "description": "Get StudentHealthIssue",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentHealthIssue",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentHealthIssue"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "StudentHealthIssue"
+                ],
+                "summary": "Update the specified StudentHealthIssue in storage",
+                "description": "Update StudentHealthIssue",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentHealthIssue",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentHealthIssue that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentHealthIssue"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentHealthIssue"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StudentHealthIssue"
+                ],
+                "summary": "Remove the specified StudentHealthIssue from storage",
+                "description": "Delete StudentHealthIssue",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentHealthIssue",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/StudentParents": {
+            "get": {
+                "tags": [
+                    "StudentParent"
+                ],
+                "summary": "Get a listing of the StudentParents.",
+                "description": "Get all StudentParents",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/StudentParent"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "StudentParent"
+                ],
+                "summary": "Store a newly created StudentParent in storage",
+                "description": "Store StudentParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentParent that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentParent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentParent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/StudentParents/{id}": {
+            "get": {
+                "tags": [
+                    "StudentParent"
+                ],
+                "summary": "Display the specified StudentParent",
+                "description": "Get StudentParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentParent",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentParent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "StudentParent"
+                ],
+                "summary": "Update the specified StudentParent in storage",
+                "description": "Update StudentParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentParent",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentParent that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentParent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentParent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StudentParent"
+                ],
+                "summary": "Remove the specified StudentParent from storage",
+                "description": "Delete StudentParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentParent",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/studentPreviousSchools": {
+            "get": {
+                "tags": [
+                    "StudentPreviousSchool"
+                ],
+                "summary": "Get a listing of the StudentPreviousSchools.",
+                "description": "Get all StudentPreviousSchools",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/StudentPreviousSchool"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "StudentPreviousSchool"
+                ],
+                "summary": "Store a newly created StudentPreviousSchool in storage",
+                "description": "Store StudentPreviousSchool",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentPreviousSchool that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentPreviousSchool"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentPreviousSchool"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/studentPreviousSchools/{id}": {
+            "get": {
+                "tags": [
+                    "StudentPreviousSchool"
+                ],
+                "summary": "Display the specified StudentPreviousSchool",
+                "description": "Get StudentPreviousSchool",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentPreviousSchool",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentPreviousSchool"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "StudentPreviousSchool"
+                ],
+                "summary": "Update the specified StudentPreviousSchool in storage",
+                "description": "Update StudentPreviousSchool",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentPreviousSchool",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentPreviousSchool that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentPreviousSchool"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentPreviousSchool"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StudentPreviousSchool"
+                ],
+                "summary": "Remove the specified StudentPreviousSchool from storage",
+                "description": "Delete StudentPreviousSchool",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentPreviousSchool",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/studentSiblings": {
+            "get": {
+                "tags": [
+                    "StudentSibling"
+                ],
+                "summary": "Get a listing of the StudentSiblings.",
+                "description": "Get all StudentSiblings",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/StudentSibling"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "StudentSibling"
+                ],
+                "summary": "Store a newly created StudentSibling in storage",
+                "description": "Store StudentSibling",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentSibling that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentSibling"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentSibling"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/studentSiblings/{id}": {
+            "get": {
+                "tags": [
+                    "StudentSibling"
+                ],
+                "summary": "Display the specified StudentSibling",
+                "description": "Get StudentSibling",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentSibling",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentSibling"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "StudentSibling"
+                ],
+                "summary": "Update the specified StudentSibling in storage",
+                "description": "Update StudentSibling",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentSibling",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentSibling that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentSibling"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentSibling"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StudentSibling"
+                ],
+                "summary": "Remove the specified StudentSibling from storage",
+                "description": "Delete StudentSibling",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentSibling",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/studentStatuses": {
             "get": {
                 "tags": [
@@ -3364,6 +4558,205 @@
                         "name": "id",
                         "in": "path",
                         "description": "id of StudentStatus",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/studentStepParents": {
+            "get": {
+                "tags": [
+                    "StudentStepParent"
+                ],
+                "summary": "Get a listing of the StudentStepParents.",
+                "description": "Get all StudentStepParents",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/StudentStepParent"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "StudentStepParent"
+                ],
+                "summary": "Store a newly created StudentStepParent in storage",
+                "description": "Store StudentStepParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentStepParent that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentStepParent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentStepParent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/studentStepParents/{id}": {
+            "get": {
+                "tags": [
+                    "StudentStepParent"
+                ],
+                "summary": "Display the specified StudentStepParent",
+                "description": "Get StudentStepParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentStepParent",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentStepParent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "StudentStepParent"
+                ],
+                "summary": "Update the specified StudentStepParent in storage",
+                "description": "Update StudentStepParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentStepParent",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "StudentStepParent that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/StudentStepParent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/StudentStepParent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StudentStepParent"
+                ],
+                "summary": "Remove the specified StudentStepParent from storage",
+                "description": "Delete StudentStepParent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of StudentStepParent",
                         "required": true,
                         "type": "integer"
                     }
@@ -3692,9 +5085,6 @@
                             "referance_phone": {
                                 "type": "string"
                             },
-                            "enroll_date": {
-                                "type": "string"
-                            },
                             "custody": {
                                 "type": "string"
                             },
@@ -3729,9 +5119,6 @@
                                 "type": "string"
                             },
                             "national_no": {
-                                "type": "string"
-                            },
-                            "submit_date": {
                                 "type": "string"
                             }
                         },
@@ -3980,6 +5367,51 @@
                 }
             }
         },
+        "EmergencyContact": {
+            "required": [
+                "student_id",
+                "name",
+                "relation",
+                "mobile"
+            ],
+            "properties": {
+                "student_id": {
+                    "description": "student_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "relation": {
+                    "description": "relation",
+                    "type": "string"
+                },
+                "mobile": {
+                    "description": "mobile",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "address",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
         "EvaluationCard": {
             "required": [
                 ""
@@ -4114,6 +5546,10 @@
                 "name"
             ],
             "properties": {
+                "division_id": {
+                    "description": "division_id",
+                    "type": "integer"
+                },
                 "name": {
                     "description": "name",
                     "type": "string"
@@ -4392,7 +5828,6 @@
                 "city",
                 "email",
                 "mobile",
-                "submit_date",
                 "photo",
                 "code",
                 "lang_id",
@@ -4403,7 +5838,6 @@
                 "referance_name",
                 "referance_email",
                 "referance_phone",
-                "enroll_date",
                 "custody",
                 "foreigner",
                 "egy_returning",
@@ -4521,11 +5955,6 @@
                     "description": "mobile",
                     "type": "string"
                 },
-                "submit_date": {
-                    "description": "submit_date",
-                    "type": "string",
-                    "format": "date"
-                },
                 "photo": {
                     "description": "photo",
                     "type": "string"
@@ -4571,11 +6000,6 @@
                 "referance_phone": {
                     "description": "referance_phone",
                     "type": "string"
-                },
-                "enroll_date": {
-                    "description": "enroll_date",
-                    "type": "string",
-                    "format": "date"
                 },
                 "custody": {
                     "description": "custody",
@@ -4625,6 +6049,179 @@
                 }
             }
         },
+        "StudentDetail": {
+            "required": [
+                "student_id",
+                "marital_status_id"
+            ],
+            "properties": {
+                "student_id": {
+                    "description": "student_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "marital_status_id": {
+                    "description": "marital_status_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "bus": {
+                    "description": "bus",
+                    "type": "string"
+                },
+                "custodial_parent_name": {
+                    "description": "custodial_parent_name",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "StudentHealthIssue": {
+            "required": [
+                "student_id",
+                "issue"
+            ],
+            "properties": {
+                "student_id": {
+                    "description": "student_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "issue": {
+                    "description": "issue",
+                    "type": "string"
+                },
+                "doctor_name": {
+                    "description": "doctor_name",
+                    "type": "string"
+                },
+                "doctor_phone": {
+                    "description": "doctor_phone",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "StudentParent": {
+            "required": [
+                "student_id",
+                "parent_id"
+            ],
+            "properties": {
+                "student_id": {
+                    "description": "student_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "parent_id": {
+                    "description": "parent_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "StudentPreviousSchool": {
+            "required": [
+                "student_id"
+            ],
+            "properties": {
+                "student_id": {
+                    "description": "student_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "year_attended": {
+                    "description": "year_attended",
+                    "type": "string"
+                },
+                "reason_for_leaving": {
+                    "description": "reason_for_leaving",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "StudentSibling": {
+            "required": [
+                "student_id",
+                "sibling_in_alsson",
+                "name"
+            ],
+            "properties": {
+                "student_id": {
+                    "description": "student_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "sibling_in_alsson": {
+                    "description": "sibling_in_alsson",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "current_school": {
+                    "description": "current_school",
+                    "type": "string"
+                },
+                "age": {
+                    "description": "age",
+                    "type": "string"
+                },
+                "grade": {
+                    "description": "grade",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
         "StudentStatus": {
             "required": [
                 "name"
@@ -4632,6 +6229,51 @@
             "properties": {
                 "name": {
                     "description": "name",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "StudentStepParent": {
+            "required": [
+                "student_id",
+                "name",
+                "gender_id"
+            ],
+            "properties": {
+                "student_id": {
+                    "description": "student_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "gender_id": {
+                    "description": "gender_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "phone": {
+                    "description": "phone",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "address",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
                     "type": "string"
                 },
                 "created_at": {

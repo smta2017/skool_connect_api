@@ -123,6 +123,7 @@ use Illuminate\Support\Facades\Route;
         Route::resource('studentPreviousSchools', App\Http\Controllers\API\StudentPreviousSchoolAPIController::class);
 
         Route::post('changeAdmissionStatus/{id}', [App\Http\Controllers\API\AdmissionAPIController::class,'change_status']);
+        Route::post('getDivisionGrades/{id}', [App\Http\Controllers\API\GradeAPIController::class,'getDivisionGrades']);
 
     });
 // });

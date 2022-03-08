@@ -279,4 +279,10 @@ class GradeAPIController extends AppBaseController
 
         return $this->sendSuccess('Grade deleted successfully');
     }
+
+    public function getDivisionGrades($id)
+    {
+        $grades = Grade::where('division_id',$id)->get();
+        return $this->sendResponse(GradeResource::collection($grades), 'Grades retrieved successfully');
+    }
 }

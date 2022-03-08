@@ -50,7 +50,6 @@ class StudentResource extends JsonResource
             'referance_name' => $this->referance_name,
             'referance_email' => $this->referance_email,
             'referance_phone' => $this->referance_phone,
-            'enroll_date' => $this->enroll_date,
             'custody' => $this->custody,
             'foreigner' => $this->foreigner,
             'egy_returning' => $this->egy_returning,
