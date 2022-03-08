@@ -148,6 +148,10 @@ class Admission extends Model
         'student_id',
         'admission_status_id',
         'apply_reason',
+        'division_id',
+        'grade_id',
+        'apply_year_id',
+        'apply_month',
         'evaluation_card_id'
     ];
 
@@ -160,6 +164,10 @@ class Admission extends Model
         'student_id' => 'integer',
         'admission_status_id' => 'integer',
         'apply_reason' => 'string',
+        'division_id' => 'integer',
+        'grade_id' => 'integer',
+        'apply_year_id' => 'integer',
+        'apply_month' => 'integer',
         'evaluation_card_id' => 'integer'
     ];
 
@@ -171,6 +179,10 @@ class Admission extends Model
     public static $rules = [
         'student_id' => '',
         'apply_reason' => '',
+        'division_id' => '',
+        'grade_id' => '',
+        'apply_year_id' => '',
+        'apply_month' => '',
         'admission_status_id' => '',
         'evaluation_card_id' => ''
     ];
@@ -187,4 +199,15 @@ class Admission extends Model
         return $this->belongsTo(EvaluationCard::class);
     }
 
+    public function Division(){
+        return $this->belongsTo(Division::class);
+    }
+
+    public function Grade(){
+        return $this->belongsTo(Grade::class);
+    }
+
+    public function ApplyYear(){
+        return $this->belongsTo(ApplyYear::class,'apply_year_id');
+    }
 }

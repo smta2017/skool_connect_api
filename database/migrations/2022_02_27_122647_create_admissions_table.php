@@ -19,7 +19,11 @@ class CreateAdmissionsTable extends Migration
             $table->integer('student_id');
             $table->integer('admission_status_id');
             $table->integer('evaluation_card_id');
-            $table->string('apply_reason');
+            $table->string('apply_reason')->nullable();
+            $table->integer('division_id')->nullable();
+            $table->integer('grade_id')->nullable();
+            $table->integer('apply_year_id')->nullable();
+            $table->integer('apply_month')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

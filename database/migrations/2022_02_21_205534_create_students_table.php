@@ -24,7 +24,7 @@ class CreateStudentsTable extends Migration
             $table->string('last_name_ar');
             $table->integer('division_id');
             $table->integer('grade_id');
-            $table->integer('class_id');
+            $table->integer('class_id')->nullable();
             $table->string('national_no');
             $table->string('passport_no');
             $table->date('birth_date');

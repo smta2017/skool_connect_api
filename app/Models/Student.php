@@ -383,7 +383,7 @@ class Student extends Model
         'last_name_ar' => 'required',
         'division_id' => 'required',
         'grade_id' => 'required',
-        'class_id' => 'required',
+        'class_id' => '',
         'national_no' => 'required',
         'passport_no' => 'required',
         'birth_date' => 'required',
@@ -422,20 +422,8 @@ class Student extends Model
         'learn_support_details' => 'required'
     ];
 
-    public function Division(){
-        return $this->belongsTo(Division::class);
-    }
-
-    public function Grade(){
-        return $this->belongsTo(Grade::class);
-    }
-
     public function StClass(){
         return $this->belongsTo(StClass::class,'class_id');
-    }
-
-    public function ApplyYear(){
-        return $this->belongsTo(ApplyYear::class,'academic_year_applying_id');
     }
 
     public function Nationality(){
