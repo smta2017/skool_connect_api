@@ -5258,6 +5258,11 @@
                     "description": "evaluation_card_id",
                     "type": "integer",
                     "format": "int32"
+                },
+                "apply_reason": {
+                    "description": "apply_reason",
+                    "type": "string",
+                    "format": "int32"
                 }
             }
         },
@@ -5789,6 +5794,38 @@
                 },
                 "school": {
                     "description": "school",
+                    "type": "string"
+                },
+                "religion_id": {
+                    "description": "religion_id",
+                    "type": "string"
+                },
+                "nationality_id": {
+                    "description": "nationality_id",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "address",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "phone",
+                    "type": "string"
+                },
+                "mobile": {
+                    "description": "mobile",
+                    "type": "string"
+                },
+                "card_id": {
+                    "description": "card_id",
+                    "type": "string"
+                },
+                "card_id_file": {
+                    "description": "card_id_file",
                     "type": "string"
                 },
                 "created_at": {

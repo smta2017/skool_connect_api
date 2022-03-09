@@ -447,12 +447,11 @@ class Student extends Model
     }
 
 
-    public function setOctoberAgeDateAttribute($value) {
-        $to = Carbon::createFromFormat('Y-m-d', \date('Y-m-d',strtotime($this->attributes['birth_date'])));
+    public function getOctoberAgeDate($birth_date) {
+        $to = Carbon::createFromFormat('Y-m-d', \date('Y-m-d',strtotime($birth_date)));
         $from = Carbon::createFromFormat('Y-m-d', date('Y').'-10-1');
-
         $diff = $to->diff($from);
-        $this->attributes['october_age_date'] = $diff->y.' Years '.$diff->m.' Months '.$diff->d.' Days';
+        return $diff->y.' Years '.$diff->m.' Months '.$diff->d.' Days';
     }
 
 
