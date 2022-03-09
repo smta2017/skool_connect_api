@@ -16,7 +16,7 @@ class CreateApplyYearsTable extends Migration
     {
         Schema::create('apply_years', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

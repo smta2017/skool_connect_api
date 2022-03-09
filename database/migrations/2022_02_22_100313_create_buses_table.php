@@ -16,11 +16,11 @@ class CreateBusesTable extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->id('id');
-            $table->string('bus_no');
-            $table->string('brand');
-            $table->integer('seat_count');
-            $table->string('license_no');
-            $table->date('license_expire');
+            $table->string('bus_no')->nullable();
+            $table->string('brand')->nullable();
+            $table->integer('seat_count')->nullable();
+            $table->string('license_no')->nullable();
+            $table->date('license_expire')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
