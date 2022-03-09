@@ -101,45 +101,45 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *          description="school",
  *          type="string"
  *      ),
- *      
+ *
  *
  *      @SWG\Property(
- *       property="religion_id" 
- *      description="religion_id",
+ *       property="religion_id" ,
+ *       description="religion_id",
  *          type="string"
  *      ),
  *       @SWG\Property(
- *         property="nationality_id" 
+ *         property="nationality_id",
  *         description="nationality_id",
  *          type="string"
  *      ),
  *       @SWG\Property(
- *         property="address" 
+ *         property="address",
  *         description="address",
  *          type="string"
  *      ),
  *       @SWG\Property(
- *        property="email" 
+ *        property="email",
  *        description="email",
  *          type="string"
  *      ),
  *      @SWG\Property(
- *        property="phone" 
+ *        property="phone",
  *        description="phone",
  *          type="string"
  *      ),
  *      @SWG\Property(
- *        property="mobile" 
+ *        property="mobile",
  *        description="mobile",
  *          type="string"
  *      ),
  *      @SWG\Property(
- *        property="card_id" 
+ *        property="card_id",
  *        description="card_id",
  *          type="string"
  *      ),
  *     @SWG\Property(
- *       property="card_id_file" 
+ *       property="card_id_file",
  *       description="card_id_file",
  *          type="string"
  *      ),
